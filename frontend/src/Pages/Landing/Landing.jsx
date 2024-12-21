@@ -19,10 +19,10 @@ const Landing = () => {
 
       {/* Content */}
       {/* <div className="relative flex items-center justify-center"> */}
-        {/* <h1 className="text-5xl font-bold">Welcome to Our Platform</h1> */}
-        {/* <p className="mt-4 text-lg">Your tagline or description goes here.</p> */}
-        <Navbar/>
-        <HoverRectangle/>
+      {/* <h1 className="text-5xl font-bold">Welcome to Our Platform</h1> */}
+      {/* <p className="mt-4 text-lg">Your tagline or description goes here.</p> */}
+      <Navbar />
+      <HoverRectangle />
       {/* </div> */}
     </div>
   );
