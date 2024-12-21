@@ -1,0 +1,24 @@
+import React from "react";
+import BgVid from "./bgvid3.mov";
+import HoverRectangle from "./rect";
+const Coming = () => {
+  return (
+    <div className="relative h-screen  p-0 m-0 overflow-hidden">
+      {/* Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        src={BgVid}
+        autoPlay
+        loop
+        muted
+      ></video>
+
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+      <HoverRectangle />
+      {/* </div> */}
+    </div>
+  );
+};
+
+export default Coming;
