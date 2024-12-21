@@ -1,5 +1,5 @@
 import React from "react";
-import BgVid from "./bgvid3.mov";
+import BgVid from "./bgvid3.mp4";
 import HoverRectangle from "./rect";
 const Coming = () => {
   return (
@@ -14,7 +14,7 @@ const Coming = () => {
       ></video>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gray-950  bg-opacity-70 md:bg-opacity-60"></div>
       <HoverRectangle />
       {/* </div> */}
     </div>

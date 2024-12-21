@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+import TitleLogo from "./RotaryLogo.png";
+import MainLogo from "./VesitLogo.png";
+import SecLogo from "./HabitLogo.png";
 
 const HoverRectangle = () => {
   const [targetPos, setTargetPos] = useState({ x: 0, y: 0 });
@@ -16,17 +19,15 @@ const HoverRectangle = () => {
 
   const handleMouseLeave = () => {
     setTargetPos({ x: 0, y: 0 });
-    // Also reset the current position for immediate response
     currentPos.current = { x: 0, y: 0 };
   };
 
   useEffect(() => {
     const smooth = () => {
-      const easing = targetPos.x === 0 && targetPos.y === 0 ? 0.2 : 0.1; // Faster reset
+      const easing = targetPos.x === 0 && targetPos.y === 0 ? 0.2 : 0.1;
       currentPos.current.x += (targetPos.x - currentPos.current.x) * easing;
       currentPos.current.y += (targetPos.y - currentPos.current.y) * easing;
 
-      // Only continue animation if we're not very close to target
       const threshold = 0.001;
       const shouldContinue =
         Math.abs(targetPos.x - currentPos.current.x) > threshold ||
@@ -35,7 +36,6 @@ const HoverRectangle = () => {
       if (shouldContinue) {
         animationFrame.current = requestAnimationFrame(smooth);
       } else {
-        // Snap to exactly 0 if we're very close
         if (targetPos.x === 0 && targetPos.y === 0) {
           currentPos.current = { x: 0, y: 0 };
         }
@@ -50,6 +50,7 @@ const HoverRectangle = () => {
       }
     };
   }, [targetPos]);
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -80,12 +81,16 @@ const HoverRectangle = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen flex justify-center items-center">
+    <div className="relative w-screen h-screen flex flex-col justify-center items-center ">
+      <div className="flex justify-center items-center bg-gray-200 p-2 rounded-xl bg-opacity-60 ">
+        <img src={MainLogo} alt="Main Logo" className="h-16 md:h-20 p-0 m-0" />
+        <img src={SecLogo} alt="Secondary Logo" className="h-16 md:h-20 p-0 m-0" />
+      </div>
+
       <div
         ref={cardRef}
-        className="relative w-10/12  h-4/6 bg-gradient-to-br 
-        transition-transform duration-300 ease-out"
-        // from-blue-500 to-purple-600         rounded-lg shadow-lg 
+        className="relative w-11/12 md:w-10/12 h-5/6 md:h-4/6 bg-gradient-to-br transition-transform duration-300 ease-out rounded-lg shadow-lg
+                   pb-24 md:p-0"
         style={{
           transform: `perspective(1000px) 
             rotateX(${currentPos.current.y * -25}deg) 
@@ -96,24 +101,33 @@ const HoverRectangle = () => {
         onMouseLeave={handleMouseLeave}
       >
         <div className="absolute inset-0 bg-transparent"></div>
-        <div className="p-6 flex flex-col items-center justify-center h-full text-white font-sans">
-            {/* Logo */}
-            <h1
-              className="text-9xl  font-bold tracking-wider mb-8"
-              style={{ fontFamily: "monospace" }}
-            >
-                VES HACK IT
-            </h1>
+        <div className="p-4 md:p-6 flex flex-col items-center justify-center h-full text-white font-sans">
+          <div className="flex justify-center items-center mb-6 md:mb-2 flex-col md:flex-row">
+            <img src={TitleLogo} alt="Rotary Logo" className="h-12 md:h-16 p-0 m-0" />
+            <p className="text-xl md:text-2xl text-gray-300">Rotary International</p>
+          </div>
 
-            {/* Tagline */}
-            <div className="text-xl md:text-2xl mb-12 space-x-4">
-              <span>Hustle</span>
-              <span>Dream</span>
-              <span>Hack</span>
-            </div>
+          <h1
+            className="text-5xl md:text-8xl font-bold tracking-wider mb-2"
+            style={{ fontFamily: "monospace" }}
+          >
+            VES-HACK-IT
+          </h1>
 
-            {/* Countdown Timer */}
-            <div className="grid grid-cols-4 gap-4 text-center">
+          <div className="flex flex-col items-center mb-10 md:mb-16">
+            <p className="text-xl md:text-2xl text-gray-300">Coming soon...</p>
+          </div>
+
+          <div className="text-xl md:text-2xl space-x-4 md:space-x-6 text-gray-200">
+            <span>Create</span>
+            <span>•</span>  
+            <span>Innovate</span>
+            <span>•</span>
+            <span>Win</span>
+          </div>
+
+           {/* Countdown Timer */}
+          {/* <div className="grid grid-cols-4 gap-4 text-center">
               <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
                 <div className="text-3xl md:text-5xl font-bold text-red-400">
                   {String(timeLeft.days).padStart(2, "0")}
@@ -147,7 +161,7 @@ const HoverRectangle = () => {
                   Seconds
                 </div>
               </div>
-            </div>
+            </div> */}
         </div>
       </div>
     </div>
