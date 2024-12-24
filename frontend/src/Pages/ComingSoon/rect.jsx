@@ -104,7 +104,7 @@ const HoverRectangle = () => {
         <div className="p-4 md:p-6 flex flex-col items-center justify-center h-full text-white font-sans">
           <div className="flex justify-center items-center mb-6 md:mb-2 flex-col md:flex-row">
             <img src={TitleLogo} alt="Rotary Logo" className="h-12 md:h-16 p-0 m-0" />
-            <p className="text-xl md:text-2xl text-gray-300">Rotary International</p>
+            <p className="text-xl md:text-2xl text-gray-300">Rotary Club of Bombay, Chembur West</p>
           </div>
 
           <h1
