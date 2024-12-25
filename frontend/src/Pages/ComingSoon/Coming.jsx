@@ -11,6 +11,8 @@ const Coming = () => {
         autoPlay
         loop
         muted
+        playsinline
+        preload
       ></video>
 
       {/* Overlay */}

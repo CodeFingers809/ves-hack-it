@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import TitleLogo from "./RotaryLogo.png";
 import MainLogo from "./VesitLogo.png";
 import SecLogo from "./HabitLogo.png";
+import noise from "../../assets/noisy-background.png";
 
 const HoverRectangle = () => {
   const [targetPos, setTargetPos] = useState({ x: 0, y: 0 });
@@ -11,20 +12,27 @@ const HoverRectangle = () => {
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const x = (e.clientX / windowWidth - 0.5) * 2;
+    const y = (e.clientY / windowHeight - 0.5) * 2;
+
     setTargetPos({ x, y });
   };
 
-  const handleMouseLeave = () => {
-    setTargetPos({ x: 0, y: 0 });
-    currentPos.current = { x: 0, y: 0 };
-  };
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   useEffect(() => {
     const smooth = () => {
-      const easing = targetPos.x === 0 && targetPos.y === 0 ? 0.2 : 0.1;
+      const easing = 0.08;
       currentPos.current.x += (targetPos.x - currentPos.current.x) * easing;
       currentPos.current.y += (targetPos.y - currentPos.current.y) * easing;
 
@@ -35,10 +43,6 @@ const HoverRectangle = () => {
 
       if (shouldContinue) {
         animationFrame.current = requestAnimationFrame(smooth);
-      } else {
-        if (targetPos.x === 0 && targetPos.y === 0) {
-          currentPos.current = { x: 0, y: 0 };
-        }
       }
     };
 
@@ -81,87 +85,57 @@ const HoverRectangle = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen flex flex-col justify-center items-center ">
-      <div className="flex justify-center items-center bg-gray-200 p-2 rounded-xl bg-opacity-60 ">
+    <div className="relative w-screen h-screen flex flex-col justify-center items-center">
+      <div className="flex justify-center items-center bg-gray-200 p-2 rounded-xl bg-opacity-60">
         <img src={MainLogo} alt="Main Logo" className="h-16 md:h-20 p-0 m-0" />
-        <img src={SecLogo} alt="Secondary Logo" className="h-16 md:h-20 p-0 m-0" />
+        <img
+          src={SecLogo}
+          alt="Secondary Logo"
+          className="h-16 md:h-20 p-0 m-0"
+        />
       </div>
 
       <div
         ref={cardRef}
-        className="relative w-11/12 md:w-10/12 h-5/6 md:h-4/6 bg-gradient-to-br transition-transform duration-300 ease-out rounded-lg shadow-lg
-                   pb-24 md:p-0"
+        className="relative w-11/12 md:w-10/12 h-5/6 md:h-4/6 transition-transform duration-300 ease-out rounded-[32px] shadow-lg pb-24 md:p-0 bg-[#00000042] backdrop-blur-[3px]"
         style={{
           transform: `perspective(1000px) 
-            rotateX(${currentPos.current.y * -25}deg) 
-            rotateY(${currentPos.current.x * 25}deg) 
-            scale(1.05)`,
+      rotateX(${currentPos.current.y * -15}deg) 
+      rotateY(${currentPos.current.x * 15}deg) 
+      scale(1.05)`,
         }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
       >
+        {/* Rest of your JSX remains the same */}
         <div className="absolute inset-0 bg-transparent"></div>
         <div className="p-4 md:p-6 flex flex-col items-center justify-center h-full text-white font-sans">
           <div className="flex justify-center items-center mb-6 md:mb-2 flex-col md:flex-row">
-            <img src={TitleLogo} alt="Rotary Logo" className="h-12 md:h-16 p-0 m-0" />
-            <p className="text-xl md:text-2xl text-gray-300">Rotary Club of Bombay, Chembur West</p>
+            <img
+              src={TitleLogo}
+              alt="Rotary Logo"
+              className="h-12 md:h-16 p-0 m-0"
+            />
+            <p className="text-xl md:text-2xl text-gray-300 ml-2 league-spartan-font">
+              Rotary Club of Bombay, Chembur West
+            </p>
           </div>
 
-          <h1
-            className="text-5xl md:text-8xl font-bold tracking-wider mb-2"
-            style={{ fontFamily: "monospace" }}
-          >
+          <h1 className="text-5xl md:text-8xl font-bold tracking-wider mb-2 league-spartan-font">
             VES-HACK-IT
           </h1>
 
           <div className="flex flex-col items-center mb-10 md:mb-16">
-            <p className="text-xl md:text-2xl text-gray-300">Coming soon...</p>
+            <p className="text-xl md:text-2xl text-gray-300 league-spartan-font">
+              Coming soon...
+            </p>
           </div>
 
-          <div className="text-xl md:text-2xl space-x-4 md:space-x-6 text-gray-200">
+          <div className="text-xl md:text-2xl space-x-4 md:space-x-6 text-gray-200 league-spartan-font">
             <span>Create</span>
-            <span>•</span>  
+            <span>•</span>
             <span>Innovate</span>
             <span>•</span>
             <span>Win</span>
           </div>
-
-           {/* Countdown Timer */}
-          {/* <div className="grid grid-cols-4 gap-4 text-center">
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-red-400">
-                  {String(timeLeft.days).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-red-400/80">Days</div>
-              </div>
-
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-blue-400">
-                  {String(timeLeft.hours).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-blue-400/80">
-                  Hours
-                </div>
-              </div>
-
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-orange-400">
-                  {String(timeLeft.minutes).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-orange-400/80">
-                  Minutes
-                </div>
-              </div>
-
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-green-400">
-                  {String(timeLeft.seconds).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-green-400/80">
-                  Seconds
-                </div>
-              </div>
-            </div> */}
         </div>
       </div>
     </div>
