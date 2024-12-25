@@ -7,11 +7,7 @@ import Timeline from "./Pages/Timeline/Timeline";
 import Tracks from "./Pages/Tracks/Tracks";
 
 function App() {
-  return (
-    <>
-      <Coming />
-    </>
-  );
+  return <Coming />;
 }
 
 export default App;
