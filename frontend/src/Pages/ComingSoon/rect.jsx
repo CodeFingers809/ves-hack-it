@@ -97,7 +97,7 @@ const HoverRectangle = () => {
 
       <div
         ref={cardRef}
-        className="relative w-11/12 md:w-10/12 h-5/6 md:h-4/6 transition-transform duration-300 ease-out rounded-[32px] shadow-lg pb-24 md:p-0
+        className="relative w-11/12 md:w-10/12 h-5/6 md:h-4/6 transition-transform duration-300 ease-out rounded-[32px]  pb-24 md:p-0
          "
         style={{
           transform: `perspective(1000px) 
