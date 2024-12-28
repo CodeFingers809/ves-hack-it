@@ -11,7 +11,7 @@ const Coming = () => {
         autoPlay
         loop
         muted
-        playsinline
+        playsInline
         preload
       ></video>
 
