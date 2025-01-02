@@ -34,8 +34,11 @@ const Coming = () => {
 
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-70 md:bg-opacity-60"></div>
-      <Navbar/>
+      <Navbar />
       <HoverRectangle />
+
+      {/* Gradient Div */}
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-950 to-transparent"></div>
     </div>
   );
 };
