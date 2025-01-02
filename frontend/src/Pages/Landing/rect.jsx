@@ -1,4 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
+import TitleLogo from "./RotaryLogo.png";
+import MainLogo from "./VesitLogo.png";
+import SecLogo from "./HabitLogo.png";
+import noise from "../../assets/noisy-background.png";
 
 const HoverRectangle = () => {
   const [targetPos, setTargetPos] = useState({ x: 0, y: 0 });
@@ -8,25 +12,30 @@ const HoverRectangle = () => {
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const x = (e.clientX / windowWidth - 0.5) * 2;
+    const y = (e.clientY / windowHeight - 0.5) * 2;
+
     setTargetPos({ x, y });
   };
 
-  const handleMouseLeave = () => {
-    setTargetPos({ x: 0, y: 0 });
-    // Also reset the current position for immediate response
-    currentPos.current = { x: 0, y: 0 };
-  };
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   useEffect(() => {
     const smooth = () => {
-      const easing = targetPos.x === 0 && targetPos.y === 0 ? 0.2 : 0.1; // Faster reset
+      const easing = 0.08;
       currentPos.current.x += (targetPos.x - currentPos.current.x) * easing;
       currentPos.current.y += (targetPos.y - currentPos.current.y) * easing;
 
-      // Only continue animation if we're not very close to target
       const threshold = 0.001;
       const shouldContinue =
         Math.abs(targetPos.x - currentPos.current.x) > threshold ||
@@ -34,11 +43,6 @@ const HoverRectangle = () => {
 
       if (shouldContinue) {
         animationFrame.current = requestAnimationFrame(smooth);
-      } else {
-        // Snap to exactly 0 if we're very close
-        if (targetPos.x === 0 && targetPos.y === 0) {
-          currentPos.current = { x: 0, y: 0 };
-        }
       }
     };
 
@@ -50,6 +54,7 @@ const HoverRectangle = () => {
       }
     };
   }, [targetPos]);
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -59,7 +64,7 @@ const HoverRectangle = () => {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const hackathonDate = new Date("2025-02-22T00:00:00");
+      const hackathonDate = new Date("2025-02-14T00:00:00");
       const now = new Date();
       const difference = hackathonDate - now;
 
@@ -83,74 +88,82 @@ const HoverRectangle = () => {
     <div className="relative w-screen h-screen flex justify-center items-center">
       <div
         ref={cardRef}
-        className="relative w-10/12  h-4/6 bg-gradient-to-br 
-        transition-transform duration-300 ease-out"
-        // from-blue-500 to-purple-600         rounded-lg shadow-lg 
+        className="relative w-11/12 md:w-10/12 h-5/6 md:h-4/6 mt-20 transition-transform duration-300 ease-out rounded-[32px]  pb-24 md:p-0
+               "
         style={{
           transform: `perspective(1000px) 
-            rotateX(${currentPos.current.y * -25}deg) 
-            rotateY(${currentPos.current.x * 25}deg) 
+            rotateX(${currentPos.current.y * -15}deg) 
+            rotateY(${currentPos.current.x * 15}deg) 
             scale(1.05)`,
         }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
       >
+        {/* Rest of your JSX remains the same */}
         <div className="absolute inset-0 bg-transparent"></div>
-        <div className="p-6 flex flex-col items-center justify-center h-full text-white font-sans">
-            {/* Logo */}
-            <h1
-              className="text-9xl  font-bold tracking-wider mb-8"
-              style={{ fontFamily: "monospace" }}
-            >
-                VES HACK IT
-            </h1>
+        <div className="p-4 md:p-6 flex flex-col items-center justify-center h-full text-white font-sans">
+          <div className="flex justify-center items-center mb-6 md:mb-2 flex-col md:flex-row">
+            <img
+              src={TitleLogo}
+              alt="Rotary Logo"
+              className="h-12 md:h-16 p-0 m-0"
+            />
+            <p className="text-xl md:text-2xl text-gray-300 ml-2 league-spartan-font">
+              Rotary Club of Bombay, Chembur West
+            </p>
+          </div>
 
-            {/* Date */}
-            <div className="text-2xl md:text-3xl mb-6">22-23rd Feb, 2025</div>
+          <h1 className="text-5xl md:text-8xl font-bold tracking-wider mb-2 league-spartan-font">
+            VES-HACK-IT
+          </h1>
 
-            {/* Tagline */}
-            <div className="text-xl md:text-2xl mb-12 space-x-4">
-              <span>Hustle</span>
-              <span>Dream</span>
-              <span>Hack</span>
+          {/* <div className="flex flex-col items-center mb-10 md:mb-10">
+            <p className="text-xl md:text-2xl text-gray-300 league-spartan-font">
+              22-23rd Feb, 2025{" "}
+            </p>
+          </div> */}
+          <div className="text-xl md:text-2xl space-x-4 md:space-x-6 text-gray-200 league-spartan-font">
+            <span>Create</span>
+            <span>•</span>
+            <span>Innovate</span>
+            <span>•</span>
+            <span>Win</span>
+          </div>
+
+          {/* </div> */}
+
+          {/* Countdown Timer */}
+          <div className="grid grid-cols-4 gap-4 text-center scale-75 mt-10">
+            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
+              <div className="text-3xl md:text-5xl font-bold text-red-400">
+                {String(timeLeft.days).padStart(2, "0")}
+              </div>
+              <div className="text-sm md:text-base text-red-400/80">Days</div>
             </div>
 
-            {/* Countdown Timer */}
-            <div className="grid grid-cols-4 gap-4 text-center">
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-red-400">
-                  {String(timeLeft.days).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-red-400/80">Days</div>
+            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
+              <div className="text-3xl md:text-5xl font-bold text-blue-400">
+                {String(timeLeft.hours).padStart(2, "0")}
               </div>
+              <div className="text-sm md:text-base text-blue-400/80">Hours</div>
+            </div>
 
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-blue-400">
-                  {String(timeLeft.hours).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-blue-400/80">
-                  Hours
-                </div>
+            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
+              <div className="text-3xl md:text-5xl font-bold text-orange-400">
+                {String(timeLeft.minutes).padStart(2, "0")}
               </div>
-
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-orange-400">
-                  {String(timeLeft.minutes).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-orange-400/80">
-                  Minutes
-                </div>
-              </div>
-
-              <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-3xl md:text-5xl font-bold text-green-400">
-                  {String(timeLeft.seconds).padStart(2, "0")}
-                </div>
-                <div className="text-sm md:text-base text-green-400/80">
-                  Seconds
-                </div>
+              <div className="text-sm md:text-base text-orange-400/80">
+                Minutes
               </div>
             </div>
+
+            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm">
+              <div className="text-3xl md:text-5xl font-bold text-green-400">
+                {String(timeLeft.seconds).padStart(2, "0")}
+              </div>
+              <div className="text-sm md:text-base text-green-400/80">
+                Seconds
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

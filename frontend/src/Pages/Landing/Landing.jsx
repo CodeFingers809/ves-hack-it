@@ -1,31 +1,43 @@
-import React from "react";
-import BgVid from "./bgvid3.mov";
+import React, { useState } from "react";
+import BgVid from "./bgvideo3loop.mp4";
+import loaderimage from "./bgimage.png";
 import HoverRectangle from "./rect";
 import Navbar from "./Navbar";
-const Landing = () => {
+
+const Coming = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
-    <div className="relative h-screen  p-0 m-0 overflow-hidden">
+    <div className="relative h-screen p-0 m-0 overflow-hidden">
+      {/* Background Image Fallback */}
+      {!videoLoaded && (
+        <img
+          src={loaderimage}
+          alt="Background"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        />
+      )}
+
       {/* Background Video */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        className={`absolute top-0 left-0 w-full h-full object-cover -z-10 transition-opacity duration-500 ${
+          videoLoaded ? "opacity-100" : "opacity-0"
+        }`}
         src={BgVid}
         autoPlay
         loop
         muted
+        playsInline
+        preload="auto"
+        onCanPlay={() => setVideoLoaded(true)}
       ></video>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
-
-      {/* Content */}
-      {/* <div className="relative flex items-center justify-center"> */}
-      {/* <h1 className="text-5xl font-bold">Welcome to Our Platform</h1> */}
-      {/* <p className="mt-4 text-lg">Your tagline or description goes here.</p> */}
-      <Navbar />
+      <div className="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-70 md:bg-opacity-60"></div>
+      <Navbar/>
       <HoverRectangle />
-      {/* </div> */}
     </div>
   );
 };
 
-export default Landing;
+export default Coming;
