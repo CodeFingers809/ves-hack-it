@@ -6,6 +6,7 @@ export default {
       perspective: {
         500: "500px",
       },
+      backfaceVisibility: ['hidden'], // Adds custom utility
     },
   },
   plugins: [],
