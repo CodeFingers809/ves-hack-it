@@ -24,7 +24,7 @@ const Navbar = () => {
     if (activeElement) {
       setIndicatorStyle({
         width: `${activeElement.offsetWidth}px`,
-        transform: `translateX(${activeElement.offsetLeft -16}px)`,
+        transform: `translateX(${activeElement.offsetLeft - 16}px)`,
       });
     }
   }, [activeItem]);
@@ -45,7 +45,7 @@ const Navbar = () => {
             className="absolute top-0 bottom-0 my-auto h-5/6 bg-white/10 rounded-2xl transition-all duration-300"
             style={indicatorStyle}
           ></div>
-          
+
           {navItems.map((item, index) => (
             <button
               key={item.name}
