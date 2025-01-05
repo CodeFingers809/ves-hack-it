@@ -134,7 +134,7 @@ const FAQ = () => {
   return (
     <div className="px-6 py-12 bg-black  text-white">
       <h1 className="text-4xl font-semibold text-center mb-8 underline ">FAQ</h1>
-      <dic className="grid grid-cols-1 md:grid-cols-2    mx-40 pl-20">
+      <dic className="grid grid-cols-1 lg:grid-cols-2 mx-0  pl-0  lg:mx-40 lg:pl-20">
       {faqData.map((section, sectionIndex) => (
         <div key={sectionIndex} className="mb-10">
           <h2 className="text-4xl font-semibold mb-4">{section.category}</h2>
