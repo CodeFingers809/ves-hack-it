@@ -169,7 +169,7 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
 const Prizes = () => {
   return (
     <div className="min-w-full flex flex-grow justify-center  bg-gray-900 py-8">
-      <div className="flex flex-wrap gap-x-14  justify-center flex-1 flex-grow md:px-36 px-0 max-w-6xl ">
+      <div className="flex flex-wrap gap-x-14  justify-center flex-1 flex-grow  px-0 max-w-6xl ">
         {prizeData.map((prize, index) => (
           <PrizeCard
             key={index}
