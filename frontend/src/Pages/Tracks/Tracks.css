@@ -1,83 +1,32 @@
-.wrapper {
-  position: relative;
-  background: linear-gradient(#19191b 80%, #000816 100%);
-  overflow: hidden;
-  z-index: 0;
-}
-.grad{
+.top-gradient,
+.bottom-gradient {
   position: absolute;
-  top: -100px;
-  left: 0px;
-  width: 100%;
-  background: linear-gradient(#00000000 0%, #000 100%);
-  z-index: 999;
-}
-.software {
-  display: flex;
-  position: relative;
-  transform-style: preserve-3d;
-}
-.mars {
-  position: absolute;
-  top: 500px;
-  left: 300px;
-  transform: translate(-50%, -50%) rotate(25.19deg) perspective(500px) ;
-  width: 250px;
-  height: 250px;
-  background-image: url("../../assets/mars-map.jpg");
-  background-size: cover;
-  background-repeat: repeat-x;
-  border-radius: 50%;
-  box-shadow: inset 0 0 35px #000, 0 0 35px #AB6B54;
-  animation: animatePlanet 5s linear infinite;
-  animation-play-state: paused;
-}
-.mars:hover {
-  animation-play-state: running;
-}
-.jupiter {
-  position: absolute;
-  top: 700px;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(3.13deg) perspective(500px) ;
-  width: 350px;
-  height: 350px;
-  background-image: url("../../assets/jupiter-map.jpg");
-  background-size: cover;
-  background-repeat: repeat-x;
-  border-radius: 50%;
-  box-shadow: inset 0 0 35px #000, 0 0 35px #948779;
-  animation: animatePlanet 5s linear infinite;
-  animation-play-state: paused;
-}
-.jupiter:hover {
-  animation-play-state: running;
-}
-.mercury {
-  position: absolute;
-  top: 500px;
-  right: 150px;
-  transform: translate(-50%, -50%) rotate(3.13deg) perspective(500px) ;
-  width: 200px;
-  height: 200px;
-  background-image: url("../../assets/mercury-map.jpg");
-  background-size: cover;
-  background-repeat: repeat-x;
-  border-radius: 50%;
-  box-shadow: inset 0 0 35px #000, 0 0 35px #ADABAC;
-  animation: animatePlanet 5s linear infinite;
-  animation-play-state: paused;
-}
-.mercury:hover {
-  animation-play-state: running;
+  left: 0;
+  right: 0;
 }
 
-@keyframes animatePlanet {
+.raysBg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/rays.svg');
+  background-size: cover;
+  background-position: center;
+  animation: rotate-bg 10s linear infinite;
+  transform-origin: center;
+  scale: 2.5;
+  z-index: -1;
+}
+
+@keyframes rotate-bg {
   0% {
-    background-position: 0 0;
+    transform: rotate(0deg);
   }
   100% {
-    background-position: -200% 0;
+    transform: rotate(360deg);
   }
 }
-
