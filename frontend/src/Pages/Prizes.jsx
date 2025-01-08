@@ -1,25 +1,15 @@
 import { useState, useRef } from "react";
 import React from "react";
 
-const prizeData = [
+const softwarePrizeData = [
   {
     imgSrc:
       "https://img.icons8.com/emoji/96/000000/1st-place-medal-emoji.png",
-    altText: "2nd Place Medal",
+    altText: "1st Place Medal",
     rank:"gold",
     details: [
-      { text: "Cash prize of", highlight: "Rs.5000" },
-      {
-        text: "All members will receive a 1-year VIP CodeCrafters membership worth $360",
-      },
-      { text: "1 Sublime Text or merge license key worth $99" },
-    ],
-    additionalDetails: [
-      { text: "Subscription to", highlight: "Leetcode premium" },
-      {
-        text: "Food vouchers",
-      },
-    ],
+      { text: "Cash prize of", highlight: "Rs.50000" },
+    ]
   },
   {
     imgSrc:
@@ -27,36 +17,27 @@ const prizeData = [
     altText: "2nd Place Medal",
     rank:"silver",
     details: [
-      { text: "Cash prize of", highlight: "Rs.5000" },
-      {
-        text: "All members will receive a 1-year VIP CodeCrafters membership worth $360",
-      },
-      { text: "1 Sublime Text or merge license key worth $99" },
+      { text: "Cash prize of", highlight: "Rs.25000" },
     ],
-    additionalDetails: [
-      { text: "Subscription to", highlight: "Leetcode premium" },
-      {
-        text: "Food vouchers",
-      },
-    ],
+  },
+];
+const hardwarePrizeData = [
+  {
+    imgSrc:
+      "https://img.icons8.com/emoji/96/000000/1st-place-medal-emoji.png",
+    altText: "1st Place Medal",
+    rank:"gold",
+    details: [
+      { text: "Cash prize of", highlight: "Rs.50000" },
+    ]
   },
   {
     imgSrc:
-      "https://img.icons8.com/emoji/96/000000/3rd-place-medal-emoji.png",
+      "https://img.icons8.com/emoji/96/000000/2nd-place-medal-emoji.png",
     altText: "2nd Place Medal",
-    rank:"bronze",
+    rank:"silver",
     details: [
-      { text: "Cash prize of", highlight: "Rs.5000" },
-      {
-        text: "All members will receive a 1-year VIP CodeCrafters membership worth $360",
-      },
-      { text: "1 Sublime Text or merge license key worth $99" },
-    ],
-    additionalDetails: [
-      { text: "Subscription to", highlight: "Leetcode premium" },
-      {
-        text: "Food vouchers",
-      },
+      { text: "Cash prize of", highlight: "Rs.25000" },
     ],
   },
 ];
@@ -96,7 +77,7 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
 
   return (
     <div
-    className={`relative flex-none lg:flex-1 mb-4  glow-${rank} gap-x-5 bg-slate-800 p-6 flex flex-col items-center justify-between font-quicksand rounded-2xl  border  border-stone-600 transform-gpu max-w-sm mb-11 transition-transform duration-700 ${
+    className={`relative flex-none lg:flex-1   glow-${rank} gap-x-5 bg-slate-800 p-6 flex flex-col items-center justify-between font-quicksand rounded-2xl  border  border-stone-600 transform-gpu max-w-sm mb-12 transition-transform duration-700 ${
       flipped ? "rotate-y-180" : ""
     }`}
       ref={cardRef}
@@ -126,41 +107,16 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
           }`}
         >
           {details.map((detail, index) => (
-            <li key={index}>
+            <p className="font-bold text-2xl" key={index}>
               {detail.text}{" "}
               {detail.highlight && (
                 <span className="font-semibold text-blue-400">
                   {detail.highlight}
                 </span>
               )}
-            </li>
+            </p>
           ))}
         </div>
-        {/* Back side content */}
-        <div
-          className={`text-white text-sm space-y-2 pt-14  ${
-            !flipped ? "hidden" : ""
-          }`}
-        >
-          {/* Add more detailed content here */}
-          <p className="font-semibold">Additional Details:</p>
-          {additionalDetails.map((detail, index) => (
-            <li key={index}>
-              {detail.text}{" "}
-              {detail.highlight && (
-                <span className="font-semibold text-blue-400">
-                  {detail.highlight}
-                </span>
-              )}
-            </li>
-          ))}
-        </div>
-        <button
-          className="mt-4 bg-black text-white py-2 px-6 rounded-2xl"
-          onClick={handleFlip}
-        >
-          {flipped ? "Less" : "More"}
-        </button>
       </div>
     </div>
   );
@@ -168,9 +124,24 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
 
 const Prizes = () => {
   return (
-    <div className="min-w-full flex flex-grow justify-center  bg-gray-900 py-8">
-      <div className="flex flex-wrap gap-x-14  justify-center flex-1 flex-grow  px-0 max-w-6xl ">
-        {prizeData.map((prize, index) => (
+    <div className="min-w-full flex flex-col   bg-gray-900 py-8">
+      <p className="text-5xl font-bold text-center justify-center text-white">Prizes</p>
+      <p className="text-3xl text-white font-extrabold text-center mt-8 mb-12">Software Track</p>
+      <div className="flex flex-wrap gap-x-14  justify-center min-w-full flex-1 flex-grow  px-0 max-w-6xl ">
+        {softwarePrizeData.map((prize, index) => (
+          <PrizeCard
+            key={index}
+            imgSrc={prize.imgSrc}
+            altText={prize.altText}
+            details={prize.details}
+            rank={prize.rank}
+            additionalDetails={prize.additionalDetails}
+          />
+        ))}
+      </div>
+      <p className="text-3xl text-white font-extrabold text-center mt-8 mb-12">Hardware Track</p>
+      <div className="flex flex-wrap gap-x-14  justify-center min-w-full flex-1 flex-grow  px-0 max-w-6xl ">
+        {hardwarePrizeData.map((prize, index) => (
           <PrizeCard
             key={index}
             imgSrc={prize.imgSrc}

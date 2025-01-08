@@ -8,37 +8,37 @@ const faqData = [
       {
         question: 'What is a hackathon?',
         answer:
-          'HackMIT is a weekend-long event where thousands of students from around the world 🌎 come together to work on cool new software 🕹 and/or hardware 🛠 projects. Websites 🖥 and mobile apps 📱 are common types of hacks, but you can build anything! Think outside of the box! 📦',
+          'HackMIT is a weekend-long event where thousands of students from around the world come together to work on innovative software and/or hardware projects. Websites and mobile apps are common types of hacks, but participants are encouraged to think outside the box and build anything they can imagine.',
       },
       {
         question: 'When is HackMIT?',
         answer:
-          'This year, we will be extending HackMIT to 3️⃣6️⃣ hours! It will start on Friday evening in the east coast, and end Sunday morning on the weekend of September 1️⃣8️⃣-2️⃣0️⃣ :)',
+          'This year, HackMIT will be extended to 36 hours. It will begin on Friday evening (Eastern Time) and conclude on Sunday morning during the weekend of September 18-20.',
       },
       {
-        question: "What's the cost 💰?",
+        question: 'What is the cost?',
         answer:
-          'Admission is free and includes mentors, workshops, $wag, resources, and a memorable experience!',
+          'Admission to HackMIT is free. This includes access to mentors, workshops, swag, resources, and a memorable experience.',
       },
       {
-        question: "Where’s the schedule?",
+        question: 'Where is the schedule?',
         answer:
-          "We'll release a more detailed 🗓 schedule in August. For now, know that we’re planning for opening ceremony to start Friday at 9pm EDT and for closing ceremony to end Sunday mid-afternoon.",
+          'A detailed schedule will be released in August. For now, the opening ceremony is scheduled to begin on Friday evening at 9 PM EDT, and the closing ceremony will conclude on Sunday afternoon.',
       },
       {
-        question: "But I’ve never hacked!",
+        question: 'But I’ve never hacked before!',
         answer:
-          "That's totally okay! This year at HackMIT we'll be hosting a series of beginner workshops where you can start getting your hands 🤝 dirty with all things hackathon-y. Those who attend the beginner workshops are also eligible for the beginner prize! 🏅",
+          "That's okay! At HackMIT, we will host beginner workshops to help you get started with hacking. Attendees of these workshops will also be eligible for the beginner prize.",
       },
       {
-        question: "I have more questions⁉️",
+        question: 'I have more questions.',
         answer:
-          'Please email us at <a class="link" href="help@hackmit.org"> [email protected] </a> if you\'ve got any questions or concerns! We’d love to help you out :)',
+          'Please email us at <a class="link" href="mailto:help@hackmit.org">help@hackmit.org</a> with any questions or concerns. We are happy to assist you.',
       },
       {
-        question: "A question for you:",
+        question: 'A question for you:',
         answer:
-          'Is a hotdog 🌭 a sandwich 🥪? Is cereal 🥣 a soup 🍲? Help our team decide on these cRiTIcAL questions by sending your answers to <a class="link" href="idk@hackmit.org"> [email protected] </a> (and any other memes you want to share). Our favorite response may win a prize! Bonus points for sending us a floppy disk!',
+          'Is a hotdog a sandwich? Is cereal a soup? Help our team decide these important questions by sending your answers to <a class="link" href="mailto:idk@hackmit.org">idk@hackmit.org</a>. Our favorite response may win a prize!',
       },
     ],
   },
@@ -46,28 +46,28 @@ const faqData = [
     category: 'Virtual',
     questions: [
       {
-        question: 'How does a virtual 🌐 hackathon work?',
+        question: 'How does a virtual hackathon work?',
         answer:
-          "We will 🅱️e announcing more details in the coming months, 🅱️ut all of the essential parts of our event will remain the same! You'll still get to meet other hackers, talk to our sponsors 💸, listen to prominent leaders 🧑‍💼 in tech, and win amazing prizes 🎖!",
+          'Details on how the virtual HackMIT will work will be announced in the coming months. However, all essential aspects of the event will remain the same. You will still have opportunities to meet other hackers, engage with sponsors, listen to leaders in technology, and win amazing prizes.',
       },
       {
-        question: "What tech or tools should I 🅱️ring?",
-        answer: 'Probably a computer 💻, some cool ideas 💡, and a lot of enthusiasm 💪',
+        question: 'What tech or tools should I bring?',
+        answer: 'You will need a computer, a lot of enthusiasm, and some great ideas.',
       },
       {
-        question: 'Will there $till be $wag? 🤑',
+        question: 'Will there still be swag?',
         answer:
-          'If you reside in the United States 🇺🇸, then we\'ll 🚢 ship 📬 $wag to you free of charge! Unfortunately, due to shipping restrictions we aren\'t able to ship $wag internationally 😢',
+          'If you reside in the United States, we will ship swag to you free of charge. Unfortunately, due to shipping restrictions, we are unable to ship swag internationally.',
       },
       {
-        question: 'What if I have a slow Internet connection?',
+        question: 'What if I have a slow internet connection?',
         answer:
-          "You should have no issues participating in our event as long as your Internet connection can handle the bandwidth of a standard video 🎥 call or livestream. Just make sure to download large SDKs or developer tools in advance!",
+          'As long as your internet connection can support standard video calls or live streams, you should have no trouble participating. Make sure to download any large SDKs or developer tools in advance.',
       },
       {
         question: 'What about hardware hacks?',
         answer:
-          "Unfortunately, we aren't able to provide supplies for hardware hacks this year 😢, but if you're really passionate, that shouldn't stop you from building them!",
+          'Unfortunately, we are unable to provide supplies for hardware hacks this year. However, if you are passionate about building hardware projects, you are still welcome to participate.',
       },
     ],
   },
@@ -77,17 +77,17 @@ const faqData = [
       {
         question: 'Can I attend?',
         answer:
-          'If you are a high school 🏫 student or a college 🎓 undergraduate (MIT M.Eng included) AND you are at least 13 years old, then yes!',
+          'If you are a high school student or a college undergraduate (including MIT M.Eng students) and you are at least 13 years old, you are eligible to attend.',
       },
       {
-        question: "What if I can't attend?",
+        question: 'What if I can’t attend?',
         answer:
-          'If you\'re not currently a student and you want to help 🤝 out, <a class="link" href="https://go.hackmit.org/volunteer" target="_blank">sign up here</a> to help mentor 👨‍🏫👩‍🏫 and/or judge 👩‍⚖️ our hackers! If you have any questions, let us know at <a class="link" href="/cdn-cgi/l/email-protection#ee9881829b809a8b8b9cae868f8d8583879ac0819c89" target="_blank"> [email protected] </a>!',
+          'If you are not a student but still want to be involved, you can sign up to volunteer as a mentor or judge at <a class="link" href="https://go.hackmit.org/volunteer" target="_blank">this link</a>. If you have any questions, please contact us at <a class="link" href="/cdn-cgi/l/email-protection#ee9881829b809a8b8b9cae868f8d8583879ac0819c89" target="_blank">volunteers@hackmit.org</a>.',
       },
       {
         question: 'When is registration?',
         answer:
-          'Look out for the opening of HackMIT 2020 registration in July! This year, we\'ll have two rounds of admissions: Round 1️⃣ opens July 8th and closes July 24th, 🕛 11:59pm PDT. Round 2️⃣ opens July 25th and closes August 7th, 🕛 11:59pm PDT.',
+          'HackMIT 2020 registration opens in July. There will be two rounds of registration: Round 1 opens on July 8 and closes on July 24 at 11:59 PM PDT. Round 2 opens on July 25 and closes on August 7 at 11:59 PM PDT.',
       },
     ],
   },
@@ -95,33 +95,34 @@ const faqData = [
     category: 'Tracks & Teams',
     questions: [
       {
-        question: 'What are tracks at a hackathon? 🛤',
+        question: 'What are tracks at a hackathon?',
         answer:
-          'To help focus your ideation 🧠 process, we’ve developed four tracks, or impact areas, for you to hack in. The top project within each track will be awarded a prize 🏆.',
+          'To help focus your ideation process, we’ve developed four tracks, or impact areas, for participants to hack in. The top project in each track will be awarded a prize.',
       },
       {
-        question: 'How will tracks and prizes 🥇 work?',
+        question: 'How will tracks and prizes work?',
         answer:
-          'You\'ll have the opportunity to submit your project to 1️⃣ (and only one!) of our tracks, making you eligible for that track prize! During our event, we\'ll also be providing each track with its own set of ideation resources.',
+          'Participants will have the opportunity to submit their project to one (and only one) track, making them eligible for that track’s prize. Each track will have its own set of ideation resources provided during the event.',
       },
       {
         question: 'Do I have to submit to a track?',
         answer:
-          "You're not required to submit your hack to a track, but you will need to in order to be considered for our track prizes. Tracks are meant to enhance the hacker experience, but if there truly isn't a track for you, don't worry! Projects submitted without a track are still eligible for sponsor challenges and HackMIT grand prizes 🏆🏆🏆.",
+          'It is not mandatory to submit your project to a track, but doing so will make you eligible for the track’s prizes. If you do not submit to a track, your project will still be eligible for sponsor challenges and HackMIT grand prizes.',
       },
       {
         question: 'Do I have to submit a project if I attend?',
         answer:
-          'If you don\'t submit a project, you can still attend our workshops and listen 👂 to our awesome speakers! However, in order to receive $wag, you must submit a project.',
+          'You are not required to submit a project to attend the event. However, in order to receive swag, you must submit a project.',
       },
       {
         question: 'How do teams work?',
         answer:
-          'Your team can have up to 4️⃣ people! You can select teammates 🤼 when you register, or you can register individually without specified teammates. We’ll admit by teams, so rest assured you’ll be able to hack with your friends!',
+          'Teams can consist of up to four members. You can select your teammates during registration or register individually and be matched with others. Teams will be admitted to the event together, so you can hack alongside your friends.',
       },
     ],
   },
 ];
+
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -133,7 +134,7 @@ const FAQ = () => {
 
   return (
     <div className="px-6 py-12 bg-black  text-white">
-      <h1 className="text-4xl font-semibold text-center mb-8 underline ">FAQ</h1>
+      <h1 className="text-5xl font-bold text-center justify-center text-white mb-8 ">FAQ</h1>
       <dic className="grid grid-cols-1 lg:grid-cols-2 mx-0  pl-0  lg:mx-40 lg:pl-20">
       {faqData.map((section, sectionIndex) => (
         <div key={sectionIndex} className="mb-10">
