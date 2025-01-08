@@ -5,18 +5,20 @@ import Prizes from "./Pages/Prizes";
 import Sponsors from "./Pages/Sponsors";
 import Timeline from "./Pages/Timeline/Timeline";
 import Tracks from "./Pages/Tracks/Tracks";
+import Navbar from "./Pages/Landing/Navbar";
 
 function App() {
   return (
-    <Coming />
-    // <>
-    //   <Landing />
-    //   <Tracks />
-    //   <Prizes />
-    //   <Timeline />
-    //   <Sponsors />
-    //   <Faq />
-    // </>
+    // <Coming />
+    <>
+      <Navbar />
+      <Landing />
+      <Tracks />
+      <Prizes />
+      {/* <Timeline /> */}
+      <Sponsors />
+      <Faq />
+    </>
   );
 }
 
