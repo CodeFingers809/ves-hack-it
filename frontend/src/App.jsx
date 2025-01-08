@@ -8,15 +8,14 @@ import Tracks from "./Pages/Tracks/Tracks";
 
 function App() {
   return (
-    <Coming />
-    // <>
-    //   <Landing />
-    //   <Tracks />
-    //   <Prizes />
-    //   <Timeline />
-    //   <Sponsors />
-    //   <Faq />
-    // </>
+    <>
+      <Landing />
+      <Tracks />
+      <Prizes />
+      <Timeline />
+      <Sponsors />
+      <Faq />
+    </>
   );
 }
 
