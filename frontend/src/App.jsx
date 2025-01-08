@@ -5,20 +5,23 @@ import Prizes from "./Pages/Prizes";
 import Sponsors from "./Pages/Sponsors";
 import Timeline from "./Pages/Timeline/Timeline";
 import Tracks from "./Pages/Tracks/Tracks";
+import Navbar from "./Pages/Landing/Navbar";
 import Teams from "./Teams";
 
 function App() {
   return (
     // <Coming />
     <>
+       <Navbar />
        <Landing />
        <Tracks />
        <Timeline />
        <Sponsors />
-      <Prizes />
+       <Prizes />
        <Teams/>
        <Faq />
      </>
+
   );
 }
 

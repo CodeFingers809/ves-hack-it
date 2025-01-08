@@ -36,8 +36,7 @@ const Coming = () => {
       ></video>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-70 md:bg-opacity-60"></div>
-      <Navbar />
+      <div className="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-70 md:bg-opacity-70"></div>
       <HoverRectangle />
 
       {/* Gradient Div */}
