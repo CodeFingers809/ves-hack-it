@@ -56,6 +56,10 @@ const Timeline = () => {
         title: "Submission of ppt",
       },
       {
+        date: "31th Jan",
+        title: "PPT screening at VESIT, Chembur",
+      },
+      {
         date: "2nd Feb",
         title: "List of shortlisted teams for main competition",
       },
