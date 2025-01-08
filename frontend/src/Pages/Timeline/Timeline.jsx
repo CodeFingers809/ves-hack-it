@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+// Timeline.js
+import React, { useState, useEffect } from "react";
 import "./Timeline.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -8,18 +9,98 @@ const Timeline = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const [selectedCategory, setSelectedCategory] = useState("Hardware");
+
+  const timelineData = {
+    Hardware: [
+      {
+        date: "4th Jan - 20th Jan",
+        title: "Registration and workshop selection",
+      },
+      {
+        date: "20th Jan - 22nd Jan",
+        title: "Offline workshops at VESIT, Chembur",
+      },
+      {
+        date: "23rd Jan - 30th Jan",
+        title: "Domain selection and component list sharing",
+      },
+      {
+        date: "31th Jan",
+        title: "PPT screening at VESIT, Chembur",
+      },
+      {
+        date: "2nd Feb",
+        title: "Shortlisted teams announcement",
+      },
+      {
+        date: "10th Feb- 14th Feb",
+        title: "Download ID card for entry",
+      },
+      {
+        date: "15th Feb",
+        title: " Hackathon Main Day - 15th Feb 2025",
+      },
+    ],
+    Software: [
+      {
+        date: "4th Jan - 20th Jan",
+        title: "Registration and workshop selection",
+      },
+      {
+        date: "15 Jan",
+        title: "Release of problem statement",
+      },
+      {
+        date: "15 Jan - 20 Jan",
+        title: "Submission of ppt",
+      },
+      {
+        date: "2nd Feb",
+        title: "List of shortlisted teams for main competition",
+      },
+      {
+        date: "15th Feb",
+        title: " Hackathon Main Day - 15th Feb 2025",
+      },
+    ],
+  };
+
   return (
     <div
-      className="min-h-screen w-full flex items-center justify-center py-24"
+      className="min-h-screen w-full flex flex-col items-center py-12 px-4 sm:px-8"
       style={{ backgroundColor: "#000816" }}
     >
-      <ul className="list-none relative w-full max-w-4xl mx-auto">
-        {timelineData.map((item, index) => (
+      {/* Category Buttons */}
+      <div className="mb-8 flex flex-wrap justify-center gap-4">
+        <button
+          className={`px-6 py-2 text-white rounded-lg transition-all duration-300 ${
+            selectedCategory === "Hardware" ? "bg-green-500" : "bg-gray-700"
+          }`}
+          onClick={() => setSelectedCategory("Hardware")}
+        >
+          Hardware
+        </button>
+        <button
+          className={`px-6 py-2 text-white rounded-lg transition-all duration-300 ${
+            selectedCategory === "Software" ? "bg-green-500" : "bg-gray-700"
+          }`}
+          onClick={() => setSelectedCategory("Software")}
+        >
+          Software
+        </button>
+      </div>
+
+      {/* Timeline */}
+      <ul className="list-none relative w-full max-w-3xl mx-auto">
+        {timelineData[selectedCategory].map((item, index) => (
           <li
             key={index}
-            className={`glow-container relative mb-8 p-6 bg-gray-800 text-white rounded-lg shadow-xl transform transition-all duration-500 hover:scale-105 ${
-              index % 2 === 0 ? "ml-auto mr-0" : "mr-auto ml-0"
-            } w-1/2 clear-both`}
+            className={`relative mb-12 p-6 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 text-white ${
+              index % 2 === 0
+                ? "ml-auto mr-0 sm:mr-auto sm:ml-0"
+                : "mr-auto ml-0 sm:ml-auto sm:mr-0"
+            } w-full sm:w-1/2`}
             data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
           >
             {/* Glowing Dot */}
@@ -32,57 +113,23 @@ const Timeline = () => {
               }}
             />
             {/* Content */}
-            <h3 className="text-sm font-light mb-2 tracking-widest text-gray-300">
+            <h3 className="text-sm font-light mb-2 tracking-widest text-green-400">
               {item.date}
             </h3>
-            <h1 className="text-lg font-semibold mb-4">{item.title}</h1>
-            <p className="text-sm font-light leading-6 text-gray-400">
-              {item.content}
-            </p>
+            <h1 className="text-lg font-semibold mb-4 leading-snug">
+              {item.title}
+            </h1>
           </li>
         ))}
+
         {/* Middle Line */}
-        <div className="absolute top-3 bottom-4 left-1/2 w-1 bg-gray-700 transform -translate-x-1/2 glow-line"></div>
-        {/* Top Circle */}
-        <div className="absolute top-0 left-1/2 w-6 h-6 rounded-full bg-green-400 transform -translate-x-1/2 glow-dot"></div>
+        <div className="absolute top-0 bottom-4 left-1/2 w-1 bg-gray-700 transform -translate-x-1/2 hidden sm:block glow-line"></div>
+
         {/* Bottom Circle */}
-        <div className="absolute bottom-0 left-1/2 w-6 h-6 rounded-full bg-green-400 transform -translate-x-1/2 glow-dot"></div>
+        <div className="absolute bottom-0 left-1/2 w-5 h-5 rounded-full bg-green-400 transform -translate-x-1/2 glow-dot hidden sm:block"></div>
       </ul>
     </div>
   );
 };
-
-const timelineData = [
-  {
-    date: "20th Feb 2024",
-    title: "Hackathon registration starts...",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.",
-  },
-  {
-    date: "20th May, 2010",
-    title: "End Registrations",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.",
-  },
-  {
-    date: "20th May, 2010",
-    title: "Hackathon Round 1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.",
-  },
-  {
-    date: "20th May, 2010",
-    title: "Hackathon Round 2",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.",
-  },
-  {
-    date: "20th May, 2010",
-    title: "End of Hackathon",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.",
-  },
-];
 
 export default Timeline;

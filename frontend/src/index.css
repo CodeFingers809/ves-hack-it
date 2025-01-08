@@ -22,3 +22,40 @@ body,
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+.workbench-font {
+  font-family: "Workbench", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "BLED" 0, "SCAN" 0;
+}
+
+/*** Works on common browsers ***/
+*::selection {
+  background-color: #2f5241;
+  color: #bebebe;
+}
+
+/*** Mozilla based browsers ***/
+*::-moz-selection {
+  background-color: #2f5241;
+  color: #bebebe;
+}
+
+/***For Other Browsers ***/
+*::-o-selection {
+  background-color: #2f5241;
+  color: #bebebe;
+}
+
+*::-ms-selection {
+  background-color: #2f5241;
+  color: #bebebe;
+}
+
+/*** For Webkit ***/
+*::-webkit-selection {
+  background-color: #2f5241;
+  color: #bebebe;
+}
