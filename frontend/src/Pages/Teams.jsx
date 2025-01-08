@@ -33,7 +33,7 @@ const teams = [
 
 const Teams = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black items-center ">
+    <div className="bg-gradient-to-b from-gray-900 to-black items-center" id="team">
       <h1 className="text-white text-center mb-6 text-5xl font-bold">Teams</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6 mx px-6 md:px-16">
         {teams.map((team) => (

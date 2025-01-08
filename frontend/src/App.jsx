@@ -6,22 +6,21 @@ import Sponsors from "./Pages/Sponsors";
 import Timeline from "./Pages/Timeline/Timeline";
 import Tracks from "./Pages/Tracks/Tracks";
 import Navbar from "./Pages/Landing/Navbar";
-import Teams from "./Teams";
+import Teams from "./Pages/Teams";
 
 function App() {
   return (
     // <Coming />
     <>
-       <Navbar />
-       <Landing />
-       <Tracks />
-       <Timeline />
-       <Sponsors />
-       <Prizes />
-       <Teams/>
-       <Faq />
-     </>
-
+      <Navbar />
+      <Landing />
+      <Tracks />
+      <Timeline />
+      <Sponsors />
+      <Prizes />
+      <Teams />
+      <Faq />
+    </>
   );
 }
 

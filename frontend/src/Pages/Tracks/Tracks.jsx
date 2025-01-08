@@ -33,6 +33,7 @@ const Tracks = () => {
     <div
       ref={wrapperRef}
       className="wrapper min-h-screen bg-gray-950 relative overflow-hidden flex justify-center items-center py-20"
+      id="tracks"
       style={{
         backgroundImage: `url(${grid})`,
         backgroundSize: "cover",

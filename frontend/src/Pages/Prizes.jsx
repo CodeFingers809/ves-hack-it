@@ -86,6 +86,7 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
       style={{
         perspective: "1500px", // Adding perspective for the 3D flip effect
       }}
+      id="prizes"
     >
       {/* Bottom Rounded Shape (Only semicircle) */}
       <div className="absolute top-0 w-full h-16 bg-gray-700 rounded-t-xl"></div>

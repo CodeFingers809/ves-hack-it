@@ -2,7 +2,7 @@ import React from "react";
 
 const Sponsors = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-gray-900 text-white py-16 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-gray-900 text-white py-16 relative overflow-hidden" id="sponsors">
       {/* Background Sparkles */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="sparkles"></div>

@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const navItems = [
     { name: "ABOUT", link: "#about" },
-    { name: "THEMES", link: "#themes" },
+    { name: "TRACKS", link: "#tracks" },
     { name: "TIMELINE", link: "#timeline" },
     { name: "SPONSORS", link: "#sponsors" },
     { name: "PRIZES", link: "#prizes" },

@@ -9,7 +9,7 @@ const Coming = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
-    <div className="relative h-screen p-0 m-0 overflow-hidden">
+    <div className="relative h-screen p-0 m-0 overflow-hidden" id="about">
       {/* Background Image Fallback */}
       {!videoLoaded && (
         <img
@@ -21,7 +21,7 @@ const Coming = () => {
 
       {/* Background Video */}
       {/* <video
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10" */}
       <video
         className={`absolute top-0 left-0 w-full h-full object-cover -z-10 transition-opacity duration-500 ${
           videoLoaded ? "opacity-100" : "opacity-0"
