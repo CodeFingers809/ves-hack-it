@@ -3,6 +3,7 @@ import BgVid from "./bgvideo3loop.mp4";
 import loaderimage from "./bgimage.png";
 import HoverRectangle from "./rect";
 import Navbar from "./Navbar";
+import Prizes from "../Prizes";
 
 const Coming = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -19,6 +20,8 @@ const Coming = () => {
       )}
 
       {/* Background Video */}
+      {/* <video
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       <video
         className={`absolute top-0 left-0 w-full h-full object-cover -z-10 transition-opacity duration-500 ${
           videoLoaded ? "opacity-100" : "opacity-0"
