@@ -102,6 +102,7 @@ const HoverRectangle = () => {
               src={TitleLogo}
               alt="Rotary Logo"
               className="h-12 md:h-16 p-0 m-0"
+              loading="lazy"
             />
             <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-green-200 mt-2 sm:mt-0 sm:ml-2">
               Rotary Club of Bombay, Chembur West

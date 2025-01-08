@@ -47,7 +47,7 @@ const Tracks = () => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           xmlnssvgjs="http://svgjs.dev/svgjs"
           width="100%"
           height="100%"
@@ -62,7 +62,7 @@ const Tracks = () => {
               height="140%"
               filterUnits="objectBoundingBox"
               primitiveUnits="userSpaceOnUse"
-              color-interpolation-filters="linearRGB"
+              colorInterpolationFilters="linearRGB"
             >
               <feTurbulence
                 type="fractalNoise"
@@ -80,7 +80,7 @@ const Tracks = () => {
                 surfaceScale="40"
                 specularConstant="3"
                 specularExponent="20"
-                lighting-color="#33598a"
+                lightingColor="#33598a"
                 x="0%"
                 y="0%"
                 width="100%"
