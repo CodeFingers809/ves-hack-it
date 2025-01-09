@@ -84,7 +84,7 @@ const HoverRectangle = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen flex justify-center items-center">
+    <div className="relative w-screen h-screen flex flex-col justify-center items-center">
       <div
         ref={cardRef}
         className="relative w-11/12 md:w-10/12 h-5/6 md:h-4/6 mt-20 transition-transform duration-300 ease-out  pb-24 md:p-0 "
@@ -149,20 +149,24 @@ const HoverRectangle = () => {
               </div>
             ))}
           </div>
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-green-200 mb-2">
-            Register Here
-          </p>
-          {/* Registration Buttons */}
-          <div className="flex gap-2">
-            <button className="px-6 sm:px-8 py-2 sm:py-3 bg-green-600 hover:bg-green-700 text-white font-bold text-sm sm:text-base rounded-full transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-              Software
-            </button>
-            <button className="px-6 sm:px-8 py-2 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm sm:text-base rounded-full transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-              Hardware
-            </button>
-          </div>
         </div>
       </div>
+      <button
+        onClick={() =>
+          window.open(
+            "https://unstop.com/p/ves-hack-it-vivekanand-education-societys-institute-of-technology-vesit-mumbai-1336926",
+            "_blank"
+          )
+        }
+        className="px-8 py-3 bg-gradient-to-r from-orange-400 to-blue-500 hover:from-orange-500 hover:to-blue-600 
+        text-white font-bold rounded-full text-sm md:text-base uppercase tracking-wider 
+        shadow-lg shadow-blue-500/30 transform transition-all duration-300 ease-in-out 
+        hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40 
+        focus:outline-none focus:ring-2 focus:ring-orange-400/60 
+        animate-pulse hover:animate-none z-10"
+      >
+        🚀 Apply on Unstop
+      </button>
     </div>
   );
 };

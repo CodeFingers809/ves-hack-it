@@ -36,7 +36,7 @@ const Sponsors = () => {
   };
 
   return (
-    <div className="min-h-screen bg-transparent z-0 from-gray-900 to-black text-white py-16 px-4 relative overflow-hidden" id="sponsors">
+    <div className=" bg-transparent z-0 from-gray-900 to-black text-white py-16 px-4 relative overflow-hidden" id="sponsors">
       <div className="absolute inset-0 pointer-events-none">
         <div className="stars"></div>
       </div>
