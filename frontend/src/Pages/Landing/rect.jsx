@@ -105,7 +105,7 @@ const HoverRectangle = () => {
               loading="lazy"
             />
             <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-green-200 mt-2 sm:mt-0 sm:ml-2">
-              Rotary Club of Bombay, Chembur West
+              Rotary Club of Mumbai, Ghatkopar West
             </p>
           </div>
 

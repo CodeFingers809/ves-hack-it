@@ -11,6 +11,7 @@ import Navbar from "./Pages/Landing/Navbar";
 import Teams from "./Pages/Teams";
 import Sponsors from "./Pages/Sponsor/Sponsor.jsx"
 import ParticleEffect from "./Pages/Tracks/ParticleEffect.jsx"
+import RegistrationBanner from "./Pages/Landing/RegDetail.jsx";
 
 function App() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -41,6 +42,7 @@ function App() {
     
        <Navbar />
       <Landing />
+      <RegistrationBanner/>
       <Tracks />
       <Timeline />
       <Sponsors />
