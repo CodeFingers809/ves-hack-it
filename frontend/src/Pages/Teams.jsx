@@ -36,7 +36,7 @@ const teams = [
 const TeamsBanner = () => {
   return (
     <motion.div
-      className="bg-black py-16 relative overflow-hidden"
+      className="bg-transparent z-0 py-16 relative overflow-hidden"
       id="team"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

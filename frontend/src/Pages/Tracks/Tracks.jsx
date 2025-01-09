@@ -32,7 +32,7 @@ const Tracks = () => {
   return (
     <div
       ref={wrapperRef}
-      className="wrapper min-h-screen bg-gray-950 relative overflow-hidden flex justify-center items-center py-20"
+      className=" wrapper min-h-screen bg-transparent z-0 relative overflow-hidden flex justify-center items-center py-20"
       id="tracks"
       style={{
         backgroundImage: `url(${grid})`,
@@ -41,7 +41,7 @@ const Tracks = () => {
       }}
     >
       <div className="top-gradient absolute top-0 left-0 right-0 h-[20%] bg-gradient-to-t from-transparent to-gray-950 z-40"></div>
-      <div className="bottom-gradient absolute bottom-0 left-0 right-0 h-[20%] bg-gradient-to-b from-transparent to-gray-950 z-40"></div>
+      {/* <div className="bottom-gradient absolute bottom-0 left-0 right-0 h-[20%] bg-gradient-to-b from-transparent to-gray-950 z-40"></div> */}
 
       <div className="absolute inset-0 w-full h-full pointer-events-none z-10 opacity-50">
         <svg
@@ -103,11 +103,11 @@ const Tracks = () => {
       </div>
 
       {/* Set the ParticleEffect canvas to the parent element's size */}
-      <ParticleEffect
+      {/* <ParticleEffect
         width={dimensions.width}
         height={dimensions.height}
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
-      />
+      /> */}
       <div className="w-full max-w-5xl p-4 h-auto py-20">
         {/* title */}
         <h2

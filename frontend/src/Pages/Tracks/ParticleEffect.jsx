@@ -59,13 +59,13 @@ const ParticleEffect = ({ width, height, className }) => {
   return (
     <Canvas
       style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        position: "absolute",
+        width: `${100}vw`,
+        height: `${100}vh`,
+        position: "fixed",
         top: 0,
         left: 0,
       }}
-      className={className}
+      className="bg-black absolute inset-0  w-full h-full pointer-events-none -z-50"
     >
       <ambientLight />
       <Particles width={width} height={height} />

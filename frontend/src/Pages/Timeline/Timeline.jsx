@@ -72,9 +72,9 @@ const Timeline = () => {
 
   return (
     <div
-      className="min-h-screen w-screen overflow-hidden flex flex-col items-center py-12 px-4 sm:px-8"
+      className="bg-transparent z-0 min-h-screen w-screen overflow-hidden flex flex-col items-center py-12 px-4 sm:px-8"
       id="timeline"
-      style={{ backgroundColor: "#000816" }}
+      // style={{ backgroundColor: "#000816" }}
     >
       {/* Category Buttons */}
       <div className="mb-8 flex flex-wrap justify-center gap-4">
