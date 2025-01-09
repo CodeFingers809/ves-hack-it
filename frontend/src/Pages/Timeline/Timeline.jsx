@@ -18,8 +18,13 @@ const Timeline = () => {
         title: "Registration and workshop selection",
       },
       {
+        date: "15th Jan",
+        title: "Problem statement release",
+      },
+      {
         date: "20th Jan - 22nd Jan",
-        title: "Offline workshops at VESIT, Chembur",
+        title:
+          "Hardware Training and Mentoring Workshops.( ESP32/STM/RASPBERRY PI/FPGA)",
       },
       {
         date: "23rd Jan - 30th Jan",
@@ -27,7 +32,7 @@ const Timeline = () => {
       },
       {
         date: "31th Jan",
-        title: "PPT screening at VESIT, Chembur",
+        title: "Hardware Track Presentation Round.",
       },
       {
         date: "2nd Feb",
@@ -38,8 +43,8 @@ const Timeline = () => {
         title: "Download ID card for entry",
       },
       {
-        date: "15th Feb",
-        title: " Hackathon Main Day - 15th Feb 2025",
+        date: "15th - 16th Feb",
+        title: "𝟭𝟱-𝟭𝟲𝘁𝗵 𝗙𝗲𝗯: Final Hackathon Round.",
       },
     ],
     Software: [
@@ -52,8 +57,8 @@ const Timeline = () => {
         title: "Release of problem statement",
       },
       {
-        date: "15 Jan - 20 Jan",
-        title: "Submission of ppt",
+        date: "21 Jan",
+        title: "Software Track Presentation Submission.",
       },
       {
         date: "31th Jan",
@@ -64,8 +69,8 @@ const Timeline = () => {
         title: "List of shortlisted teams for main competition",
       },
       {
-        date: "15th Feb",
-        title: " Hackathon Main Day - 15th Feb 2025",
+        date: "15th - 16th Feb",
+        title: "𝟭𝟱-𝟭𝟲𝘁𝗵 𝗙𝗲𝗯: Final Hackathon Round.",
       },
     ],
   };
