@@ -31,7 +31,7 @@ const Timeline = () => {
         title: "Domain selection and component list sharing",
       },
       {
-        date: "31th Jan",
+        date: "31st Jan",
         title: "Hardware Track Presentation Round.",
       },
       {

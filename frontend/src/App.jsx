@@ -40,7 +40,7 @@ function App() {
   return (
     // <Coming />
     <>
-      <div className="fixed inset-0 w-full h-full pointer-events-none z-10 opacity-35">
+      <div className="fixed inset-0 w-screen h-screen pointer-events-none z-10 opacity-35">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"

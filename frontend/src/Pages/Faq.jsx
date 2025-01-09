@@ -33,7 +33,7 @@ const faqData = [
       {
         question: 'Where can I get more details or ask questions?',
         answer:
-          'You can contact the coordinators directly or email us with your queries. For regular updates, follow us on Instagram at <a class="link" href="https://www.instagram.com/ves_hack_it" target="_blank">@ves_hack_it</a>.',
+          `You can contact the coordinators directly or email us with your queries. For regular updates, follow us on Instagram @ves_hack_it.`,
       },
     ],
   },

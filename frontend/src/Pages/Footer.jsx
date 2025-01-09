@@ -4,7 +4,7 @@ import insta from "../assets/insta.png";
 const Footer = () => {
   return (
     <div className="bg-green-700 w-full p-12 text-white flex justify-between items-center flex-wrap">
-      <p>
+      <div>
         <p className="text-white text-4xl mb-1">We can't wait to see you!</p>
         <br />
         <span className="text-white text-2xl">For any Queries Contact:</span>
@@ -18,7 +18,7 @@ const Footer = () => {
           <br />
           Gaurang Rane: +91 98676 15388
         </span>
-      </p>
+      </div>
       <div>
         <a
           href="https://www.instagram.com/ves_hack_it/"
