@@ -77,7 +77,7 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
 
   return (
     <div
-    className={`relative flex-none lg:flex-1   glow-${rank} gap-x-5 bg-slate-800 p-6 flex flex-col items-center justify-between font-quicksand rounded-2xl  border  border-stone-600 transform-gpu max-w-sm mb-12 transition-transform duration-700 ${
+    className={` relative flex-none lg:flex-1   glow-${rank} gap-x-5 bg-slate-800 p-6 flex flex-col items-center justify-between font-quicksand rounded-2xl  border  border-stone-600 transform-gpu max-w-sm mb-12 transition-transform duration-700 ${
       flipped ? "rotate-y-180" : ""
     }`}
       ref={cardRef}
@@ -125,7 +125,7 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
 
 const Prizes = () => {
   return (
-    <div className="min-w-full flex flex-col   bg-gray-900 py-8">
+    <div className="min-w-full flex flex-col bg-transparent z-0 py-8">
       <p className="text-5xl font-bold text-center justify-center text-white">Prizes</p>
       <p className="text-3xl text-white font-extrabold text-center mt-8 mb-12">Software Track</p>
       <div className="flex flex-wrap gap-x-14  justify-center min-w-full flex-1 flex-grow  px-0 max-w-6xl ">
