@@ -18,8 +18,13 @@ const Timeline = () => {
         title: "Registration and workshop selection",
       },
       {
+        date: "15th Jan",
+        title: "Problem statement release",
+      },
+      {
         date: "20th Jan - 22nd Jan",
-        title: "Offline workshops at VESIT, Chembur",
+        title:
+          "Hardware Training and Mentoring Workshops.( ESP32/STM/RASPBERRY PI/FPGA)",
       },
       {
         date: "23rd Jan - 30th Jan",
@@ -27,7 +32,7 @@ const Timeline = () => {
       },
       {
         date: "31th Jan",
-        title: "PPT screening at VESIT, Chembur",
+        title: "Hardware Track Presentation Round.",
       },
       {
         date: "2nd Feb",
@@ -38,8 +43,8 @@ const Timeline = () => {
         title: "Download ID card for entry",
       },
       {
-        date: "15th Feb",
-        title: " Hackathon Main Day - 15th Feb 2025",
+        date: "15th - 16th Feb",
+        title: "𝟭𝟱-𝟭𝟲𝘁𝗵 𝗙𝗲𝗯: Final Hackathon Round.",
       },
     ],
     Software: [
@@ -48,15 +53,15 @@ const Timeline = () => {
         title: "Registration and workshop selection",
       },
       {
-        date: "15 Jan",
+        date: "15th Jan",
         title: "Release of problem statement",
       },
       {
-        date: "15 Jan - 20 Jan",
-        title: "Submission of ppt",
+        date: "21st Jan",
+        title: "Software Track Presentation Submission.",
       },
       {
-        date: "31th Jan",
+        date: "31st Jan",
         title: "PPT screening at VESIT, Chembur",
       },
       {
@@ -64,20 +69,28 @@ const Timeline = () => {
         title: "List of shortlisted teams for main competition",
       },
       {
-        date: "15th Feb",
-        title: " Hackathon Main Day - 15th Feb 2025",
+        date: "15th - 16th Feb",
+        title: "𝟭𝟱-𝟭𝟲𝘁𝗵 𝗙𝗲𝗯: Final Hackathon Round.",
       },
     ],
   };
 
   return (
     <div
-      className="min-h-screen w-screen overflow-hidden flex flex-col items-center py-12 px-4 sm:px-8"
+      className="bg-transparent z-0 min-h-screen w-screen overflow-hidden flex flex-col items-center py-12 px-4 sm:px-8"
       id="timeline"
-      style={{ backgroundColor: "#000816" }}
+      // style={{ backgroundColor: "#000816" }}
     >
+      <h2
+        className="text-7xl font-black workbench-font text-center text-white mb-5"
+        style={{
+          textShadow: "-5px 0 12px green, 5px 0 12px blue",
+        }}
+      >
+        Timeline
+      </h2>
       {/* Category Buttons */}
-      <div className="mb-8 flex flex-wrap justify-center gap-4">
+      <div className="mb-8 flex flex-wrap justify-center gap-4 text-xl">
         <button
           className={`px-6 py-2 font-medium text-white rounded-lg transition-all duration-300 ${
             selectedCategory === "Hardware" ? "bg-green-700" : "bg-gray-700"

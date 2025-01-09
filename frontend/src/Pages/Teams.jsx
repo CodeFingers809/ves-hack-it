@@ -36,21 +36,21 @@ const teams = [
 const TeamsBanner = () => {
   return (
     <motion.div
-      className="bg-black py-16 relative overflow-hidden"
+      className="bg-transparent z-0 py-16 relative overflow-hidden"
       id="team"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-green-400 text-center mb-16 text-4xl font-semibold"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+        <h2
+          className="text-7xl font-black workbench-font text-center text-white mb-5"
+          style={{
+            textShadow: "-5px 0 12px green, 5px 0 12px blue",
+          }}
         >
-          Organizing Teams
-        </motion.h2>
+          Our Team
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
           {teams.map((team, index) => (
             <motion.div

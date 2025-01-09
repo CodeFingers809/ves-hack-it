@@ -48,7 +48,7 @@ const Navbar = () => {
     <div className="fixed top-4 left-0 right-0 z-50 w-screen flex flex-col justify-center items-center h-fit px-4 md:p-0">
       <nav className="flex items-center w-full justify-between md:w-fit h-12 rounded-full backdrop-blur-md bg-white/10 border border-white/20">
         {/* Logo */}
-        <div className="h-full flex gap-2 p-1 rounded-l-full w-24 bg-opacity-90">
+        <div className="h-full flex gap-2 p-1 rounded-l-full w-24 bg-opacity-90 pl-4">
           <img src={MainLogo} alt="Vesit Logo" className="rounded-lg" />
           <img src={SecLogo} alt="HABIT.ia Logo" className="rounded-lg" />
         </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
               href={item.link}
               ref={(el) => (navRefs.current[index] = el)}
               onClick={() => setActiveItem(item.name)}
-              className={`hidden md:flex z-10 px-4 py-1 text-sm font-medium transition duration-300 hover:text-white ${
+              className={`hidden md:flex z-10 px-6 py-1 pt-2 text-sm font-medium transition duration-300 hover:text-white ${
                 activeItem === item.name ? 'text-white' : 'text-gray-200'
               }`}
             >
