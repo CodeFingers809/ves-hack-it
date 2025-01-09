@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-// Array of FAQ questions and answers for VES-HACK-IT
+
+import React, { useState } from "react";
+
+// Array of FAQ questions and answers
 const faqData = [
   {
     category: 'General',
     questions: [
       {
-        question: 'What is VES-HACK-IT?',
-        answer:
-          'VES-HACK-IT is an electrifying 30-hour Hackathon where innovation meets sustainability! It brings together students to tackle real-world challenges with eco-friendly and energy-efficient solutions. Hosted in association with the Rotary Club of Mumbai, Ghatkopar West, this event is a perfect blend of innovation and impact.',
+        question: "What is VES-HACK-IT?",
+        answer: "VES-HACK-IT is an electrifying 30-hour Hackathon organized at VESIT College where innovation meets sustainability! It brings together students to tackle real-world challenges with eco-friendly and energy-efficient solutions. Hosted in association with the Rotary Club of Mumbai, Ghatkopar West, this event is a perfect blend of innovation and impact."
       },
       {
         question: 'When and where is VES-HACK-IT?',
@@ -40,9 +41,8 @@ const faqData = [
     category: 'Virtual',
     questions: [
       {
-        question: 'Is VES-HACK-IT a virtual event?',
-        answer:
-          'No, VES-HACK-IT will be held in person at VESIT, Chembur, Mumbai. It will provide hands-on experiences and opportunities to work with peers and mentors face-to-face.',
+        question: "Is VES-HACK-IT a virtual event?",
+        answer: "No, the final round of VES-HACK-IT will be held in person at VESIT, Chembur, Mumbai. However, other rounds, such as PPT submissions, will be conducted online to ensure flexibility and wider participation."
       },
       {
         question: 'What resources should I bring?',
@@ -70,14 +70,8 @@ const faqData = [
           'The hackathon is open to students of B.E., B.Tech, Diploma, and Management colleges from Mumbai Suburban and all over Maharashtra. Participants must be at least 13 years old.',
       },
       {
-        question: 'What if I can’t attend in person?',
-        answer:
-          'This is an in-person hackathon. If you are interested in contributing, consider signing up as a mentor or volunteer.',
-      },
-      {
-        question: 'When is registration open?',
-        answer:
-          'Registration for VES-HACK-IT opens on January 4, 2025. Don’t miss out on this thrilling event!',
+        question: "When is registration open?",
+        answer: "Registration for VES-HACK-IT is live now and closes on January 21, 2025. Don’t miss out on this thrilling event!"
       },
     ],
   },
@@ -90,14 +84,13 @@ const faqData = [
           'There are two tracks:\n🔹 Software – Build innovative, sustainable software solutions.\n🔹 Hardware – Create impactful, energy-efficient prototypes ',
       },
       {
-        question: 'How will tracks and prizes work?',
-        answer:
-          'Participants can choose one track for submission. Separate prizes will be awarded for each track, along with a chance to win the grand prize from the ₹1,50,000 prize pool. Check Prizes section for more details',
+        question: "How will tracks and prizes work?",
+        answer: "Participants can choose one track for submission. Each track, Hardware and Software, will have two winners. The 1st place winners of both tracks will receive ₹50,000 each, and the 2nd place winners will receive ₹25,000 each, adding up to the ₹1,50,000 prize pool. Check the Prizes section for more details."
       },
       {
         question: 'Do I need a team?',
         answer:
-          'Teams can have up to four members. Individual registrations are also allowed, especially for the Hardware Track. If you don’t have a team, we can help match you with others.',
+          'Teams can have up to four members. Individual registrations are also allowed, especially for the Hardware Track. If you don’t have a team, we can help match you with others.'
       },
       // {
       //   question: 'Is project submission mandatory?',
@@ -110,48 +103,58 @@ const faqData = [
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
-  const [activeSection, setActiveSection]=useState("")
+  const [activeSection, setActiveSection] = useState("");
+
   const toggleAnswer = (index, section) => {
-    setOpenIndex(openIndex === index ? null : index);
-    setActiveSection(activeSection === section? "": section)
+    if (openIndex === index && activeSection === section) {
+      setOpenIndex(null);
+      setActiveSection("");
+    } else {
+      setOpenIndex(index);
+      setActiveSection(section);
+    }
   };
 
   return (
-    <div className=" px-6 py-12 bg-transparent z-0  text-white" id='faq'>
-      <h1 className="text-5xl font-bold text-center justify-center text-white mb-8 ">FAQ</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 mx-0  pl-0  lg:mx-40 lg:pl-20">
-      {faqData.map((section, sectionIndex) => (
-        <div key={sectionIndex} className="mb-10">
-          <h2 className="text-4xl font-semibold mb-4">{section.category}</h2>
-          {section.questions.map((item, index) => (
-            <div key={index} className="mb-6">
-              <div
-                onClick={() => toggleAnswer(index, section)}
-                className="cursor-pointer flex items-center space-x-2"
+    <div className="px-6 py-12 bg-transparent z-0 text-white" id="faq">
+      <h1 className="text-5xl font-bold text-center justify-center text-white mb-8">
+        FAQ
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-0 pl-0 lg:mx-40 lg:pl-20">
+        {faqData.map((section, sectionIndex) => (
+          <div key={sectionIndex} className="mb-10">
+            <h2 className="text-4xl font-semibold mb-4">{section.category}</h2>
+            {section.questions.map((item, index) => (
+              <div key={index} className="mb-6">
+                <div
+                  onClick={() => toggleAnswer(index, section)}
+                  className="cursor-pointer flex items-center space-x-2"
                 >
-                <svg
-                  className={`w-6 h-6 transform transition-all duration-300 ${
-                    openIndex === index && activeSection===section? 'rotate-0' : '-rotate-90'
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  <svg
+                    className={`w-6 h-6 transform transition-all duration-300 ${
+                      openIndex === index && activeSection === section
+                        ? "rotate-0"
+                        : "-rotate-90"
+                    }`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-                <span className="text-xl">{item.question}</span>
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                  <span className="text-xl">{item.question}</span>
+                </div>
+                {openIndex === index && activeSection === section && (
+                  <div className="mt-2 pl-8 text-lg">{item.answer}</div>
+                )}
               </div>
-              {openIndex === index && activeSection===section && (
-                <div className={`mt-2 pl-8 text-lg ${(openIndex === index && activeSection===section)? "max-h-screen":"max-h-0"}`}>{item.answer}</div>
-               )} 
-            </div>
-          ))}
-        </div>
-      ))}
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
