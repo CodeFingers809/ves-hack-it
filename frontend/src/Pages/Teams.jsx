@@ -42,6 +42,7 @@ const Teams = () => {
               className={`w-72  bg-transparent hover:scale-110 transition-all mb-4`}
               src={team.imgSrc}
               alt={team.name} // Optional: add alt text for accessibility
+              loading="lazy"
             />
             <p className="text-white font-bold text-2xl">{team.shortName}</p>
             <p className="text-gray-500 font-bold text-md lg:text-sm">{team.name}</p>

@@ -79,16 +79,16 @@ const Timeline = () => {
       {/* Category Buttons */}
       <div className="mb-8 flex flex-wrap justify-center gap-4">
         <button
-          className={`px-6 py-2 text-white rounded-lg transition-all duration-300 ${
-            selectedCategory === "Hardware" ? "bg-green-500" : "bg-gray-700"
+          className={`px-6 py-2 font-medium text-white rounded-lg transition-all duration-300 ${
+            selectedCategory === "Hardware" ? "bg-green-700" : "bg-gray-700"
           }`}
           onClick={() => setSelectedCategory("Hardware")}
         >
           Hardware
         </button>
         <button
-          className={`px-6 py-2 text-white rounded-lg transition-all duration-300 ${
-            selectedCategory === "Software" ? "bg-green-500" : "bg-gray-700"
+          className={`px-6 py-2 font-medium text-white rounded-lg transition-all duration-300 ${
+            selectedCategory === "Software" ? "bg-green-700" : "bg-gray-700"
           }`}
           onClick={() => setSelectedCategory("Software")}
         >
