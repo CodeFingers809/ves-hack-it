@@ -3,52 +3,42 @@ import React from "react";
 
 const softwarePrizeData = [
   {
-    imgSrc:
-      "https://img.icons8.com/emoji/96/000000/1st-place-medal-emoji.png",
+    imgSrc: "https://img.icons8.com/emoji/96/000000/1st-place-medal-emoji.png",
     altText: "1st Place Medal",
-    rank:"gold",
-    details: [
-      { text: "Cash prize of", highlight: "Rs.50000" },
-    ]
+    rank: "gold",
+    details: [{ text: "Cash prize of", highlight: "Rs.50000" }],
   },
   {
-    imgSrc:
-      "https://img.icons8.com/emoji/96/000000/2nd-place-medal-emoji.png",
+    imgSrc: "https://img.icons8.com/emoji/96/000000/2nd-place-medal-emoji.png",
     altText: "2nd Place Medal",
-    rank:"silver",
-    details: [
-      { text: "Cash prize of", highlight: "Rs.25000" },
-    ],
+    rank: "silver",
+    details: [{ text: "Cash prize of", highlight: "Rs.25000" }],
   },
 ];
 const hardwarePrizeData = [
   {
-    imgSrc:
-      "https://img.icons8.com/emoji/96/000000/1st-place-medal-emoji.png",
+    imgSrc: "https://img.icons8.com/emoji/96/000000/1st-place-medal-emoji.png",
     altText: "1st Place Medal",
-    rank:"gold",
-    details: [
-      { text: "Cash prize of", highlight: "Rs.50000" },
-    ]
+    rank: "gold",
+    details: [{ text: "Cash prize of", highlight: "Rs.50000" }],
   },
   {
-    imgSrc:
-      "https://img.icons8.com/emoji/96/000000/2nd-place-medal-emoji.png",
+    imgSrc: "https://img.icons8.com/emoji/96/000000/2nd-place-medal-emoji.png",
     altText: "2nd Place Medal",
-    rank:"silver",
-    details: [
-      { text: "Cash prize of", highlight: "Rs.25000" },
-    ],
+    rank: "silver",
+    details: [{ text: "Cash prize of", highlight: "Rs.25000" }],
   },
 ];
 
 const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
   const [flipped, setFlipped] = useState(false); // State for tracking the card flip
   const cardRef = useRef(null);
-  const handleOnClick=()=>{
+  const handleOnClick = () => {
     setFlipped(!flipped);
-    cardRef.current.style.transform = `rotateY(${flipped?"180deg":"0deg"}deg) rotateY(${rotateY}deg)`
-  }
+    cardRef.current.style.transform = `rotateY(${
+      flipped ? "180deg" : "0deg"
+    }deg) rotateY(${rotateY}deg)`;
+  };
   const handleMouseMove = (e) => {
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();
@@ -71,15 +61,15 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
   };
 
   const handleFlip = () => {
-    handleOnClick()
+    handleOnClick();
     // setFlipped(!flipped); // Toggle the flip state
   };
 
   return (
     <div
-    className={`relative flex-none lg:flex-1   glow-${rank} gap-x-5 bg-slate-800 p-6 flex flex-col items-center justify-between font-quicksand rounded-2xl  border  border-stone-600 transform-gpu max-w-sm mb-12 transition-transform duration-700 ${
-      flipped ? "rotate-y-180" : ""
-    }`}
+      className={`relative flex-none lg:flex-1   glow-${rank} gap-x-5 bg-slate-800 p-6 flex flex-col items-center justify-between font-quicksand rounded-2xl  border  border-stone-600 transform-gpu max-w-sm mb-12 transition-transform duration-700 ${
+        flipped ? "rotate-y-180" : ""
+      }`}
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -126,8 +116,15 @@ const PrizeCard = ({ imgSrc, altText, details, additionalDetails, rank }) => {
 const Prizes = () => {
   return (
     <div className="min-w-full flex flex-col   bg-gray-900 py-8">
-      <p className="text-5xl font-bold text-center justify-center text-white">Prizes</p>
-      <p className="text-3xl text-white font-extrabold text-center mt-8 mb-12">Software Track</p>
+      <p className="text-5xl font-bold text-center justify-center text-white">
+        Prizes
+      </p>
+      <p className="text-4xl text-white font-extrabold text-center mt-4 mb-2">
+        💰 𝗣𝗿𝗶𝘇𝗲 𝗣𝗼𝗼𝗹: Worth over ₹1,50,000!
+      </p>
+      <p className="text-3xl text-white font-extrabold text-center mt-4 mb-12">
+        Software Track
+      </p>
       <div className="flex flex-wrap gap-x-14  justify-center min-w-full flex-1 flex-grow  px-0 max-w-6xl ">
         {softwarePrizeData.map((prize, index) => (
           <PrizeCard
@@ -140,7 +137,9 @@ const Prizes = () => {
           />
         ))}
       </div>
-      <p className="text-3xl text-white font-extrabold text-center mt-8 mb-12">Hardware Track</p>
+      <p className="text-3xl text-white font-extrabold text-center mt-8 mb-12">
+        Hardware Track
+      </p>
       <div className="flex flex-wrap gap-x-14  justify-center min-w-full flex-1 flex-grow  px-0 max-w-6xl ">
         {hardwarePrizeData.map((prize, index) => (
           <PrizeCard
