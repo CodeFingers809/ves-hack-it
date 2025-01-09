@@ -127,17 +127,23 @@ const faqData = [
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [activeSection, setActiveSection] = useState("");
+
   const toggleAnswer = (index, section) => {
-    setOpenIndex(openIndex === index ? null : index);
-    setActiveSection(activeSection === section ? "" : section);
+    if (openIndex === index && activeSection === section) {
+      setOpenIndex(null);
+      setActiveSection("");
+    } else {
+      setOpenIndex(index);
+      setActiveSection(section);
+    }
   };
 
   return (
-    <div className=" px-6 py-12 bg-transparent z-0  text-white" id="faq">
-      <h1 className="text-5xl font-bold text-center justify-center text-white mb-8 ">
+    <div className="px-6 py-12 bg-transparent z-0 text-white" id="faq">
+      <h1 className="text-5xl font-bold text-center justify-center text-white mb-8">
         FAQ
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 mx-0  pl-0  lg:mx-40 lg:pl-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-0 pl-0 lg:mx-40 lg:pl-20">
         {faqData.map((section, sectionIndex) => (
           <div key={sectionIndex} className="mb-10">
             <h2 className="text-4xl font-semibold mb-4">{section.category}</h2>
@@ -166,15 +172,7 @@ const FAQ = () => {
                   <span className="text-xl">{item.question}</span>
                 </div>
                 {openIndex === index && activeSection === section && (
-                  <div
-                    className={`mt-2 pl-8 text-lg ${
-                      openIndex === index && activeSection === section
-                        ? "max-h-screen"
-                        : "max-h-0"
-                    }`}
-                  >
-                    {item.answer}
-                  </div>
+                  <div className="mt-2 pl-8 text-lg">{item.answer}</div>
                 )}
               </div>
             ))}
