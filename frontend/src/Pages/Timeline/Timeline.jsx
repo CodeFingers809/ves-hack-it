@@ -53,15 +53,15 @@ const Timeline = () => {
         title: "Registration and workshop selection",
       },
       {
-        date: "15 Jan",
+        date: "15th Jan",
         title: "Release of problem statement",
       },
       {
-        date: "21 Jan",
+        date: "21st Jan",
         title: "Software Track Presentation Submission.",
       },
       {
-        date: "31th Jan",
+        date: "31st Jan",
         title: "PPT screening at VESIT, Chembur",
       },
       {

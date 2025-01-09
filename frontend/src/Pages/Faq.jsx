@@ -71,7 +71,7 @@ const faqData = [
       },
       {
         question: "When is registration open?",
-        answer: "Registration for VES-HACK-IT is live now and closes on January 21, 2025. Don’t miss out on this thrilling event!"
+        answer: "Registration for VES-HACK-IT is live now and closes on January 20, 2025. Don’t miss out on this thrilling event!"
       },
     ],
   },
