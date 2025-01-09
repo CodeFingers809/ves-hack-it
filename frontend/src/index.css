@@ -10,6 +10,11 @@ body,
   overflow-x: hidden;
 }
 
+* {
+  font-family: "League Spartan", serif;
+  font-optical-sizing: auto;
+}
+
 @layer utilities {
   .pause {
     animation-play-state: paused;

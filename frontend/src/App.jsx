@@ -7,6 +7,7 @@ import Timeline from "./Pages/Timeline/Timeline";
 import Tracks from "./Pages/Tracks/Tracks";
 import Navbar from "./Pages/Landing/Navbar";
 import Teams from "./Pages/Teams";
+import Footer from "./Pages/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Prizes />
       <Teams />
       <Faq />
+      <Footer />
     </>
   );
 }
