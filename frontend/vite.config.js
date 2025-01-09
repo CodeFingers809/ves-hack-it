@@ -2,11 +2,15 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import compression from "vite-plugin-compression";
 import viteImagemin from "vite-plugin-imagemin";
+import webfontDownload from "vite-plugin-webfont-dl";
+import VitePluginWebpCompress from "vite-plugin-webp-compress";
 
 export default defineConfig({
   plugins: [
     react(), // React plugin for JSX support
+    webfontDownload(),
     compression({ algorithm: "brotliCompress" }), // Enable Brotli compression
+    VitePluginWebpCompress(),
     viteImagemin(), // Optimize images at build time
   ],
 
