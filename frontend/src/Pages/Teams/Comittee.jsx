@@ -15,6 +15,8 @@ const CommitteeSection = () => {
       { name: "Dhairyash Jain , Website Developer", linkedin: "https://www.linkedin.com/in/dhairyash-jain-9799831a3/" },
       { name: "Gaurang Mapuskar , CSI Chairperson", linkedin: "https://www.linkedin.com/in/gaurang-mapuskar/" },
       { name: "Shashwat Tripathi , ISTE Chairperson", linkedin: "https://www.linkedin.com/in/shashwat-tripathi-1b8972290/" },
+      { name: "Gaurang Rane , IEEE Chairperson", linkedin: "https://www.linkedin.com/in/gaurang-rane-a45335245/" },
+      { name: "Shreyas Kale , ISA Chairperson", linkedin: "https://www.linkedin.com/in/shreyas1503/" },
       { name: "Pranav Sukali , Technical Coordinator", linkedin: "https://www.linkedin.com/in/pranav-sukali-9269a0249" },
       { name: "Shivani Nikam , Technical Coordinator", linkedin: "https://www.linkedin.com/in/shivani-nikam-a28b29288" }
     ]
