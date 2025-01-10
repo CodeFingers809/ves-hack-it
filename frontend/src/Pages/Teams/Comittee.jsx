@@ -1,17 +1,22 @@
+'use client'
+
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Linkedin } from 'lucide-react';
+import { ChevronDown, ChevronRight, ChevronUp, Linkedin } from 'lucide-react';
 
 const CommitteeSection = () => {
-  const [activeTab, setActiveTab] = useState('all');
-  const [expandedSection, setExpandedSection] = useState('websiteTeam');  // Default to 'websiteTeam'
+  const [expandedSection, setExpandedSection] = useState('');
 
   const websiteTeam = {
-    title: "WEBSITE TEAM",
+    title: "Technical Team",
     members: [
-      { name: "Aadil Shah", linkedin: "https://www.linkedin.com/in/adilns786/" },
-      { name: "Ayush Bohra", linkedin: "https://www.linkedin.com/in/ayush-bohra7/" },
-      { name: "Parth Takale", linkedin: "https://www.linkedin.com/in/parth-takale-514188264/" },
-      { name: "Dhairyash Jain", linkedin: "https://www.linkedin.com/in/dhairyash-jain-9799831a3/" }
+      { name: "Aadil Shah , Website Developer", linkedin: "https://www.linkedin.com/in/adilns786/" },
+      { name: "Ayush Bohra , Website Developer", linkedin: "https://www.linkedin.com/in/ayush-bohra7/" },
+      { name: "Parth Takale , Website Developer", linkedin: "https://www.linkedin.com/in/parth-takale-514188264/" },
+      { name: "Dhairyash Jain , Website Developer", linkedin: "https://www.linkedin.com/in/dhairyash-jain-9799831a3/" },
+      { name: "Gaurang Mapuskar , CSI Chairperson", linkedin: "https://www.linkedin.com/in/gaurang-mapuskar/" },
+      { name: "Shashwat Tripathi , ISTE Chairperson", linkedin: "https://www.linkedin.com/in/shashwat-tripathi-1b8972290/" },
+      { name: "Pranav Sukali , Technical Coordinator", linkedin: "https://www.linkedin.com/in/pranav-sukali-9269a0249" },
+      { name: "Shivani Nikam , Technical Coordinator", linkedin: "https://www.linkedin.com/in/shivani-nikam-a28b29288" }
     ]
   };
 
@@ -88,14 +93,14 @@ const CommitteeSection = () => {
   };
 
   return (
-    <div className="py-8  text-gray-200">
+    <div className="py-8 text-gray-200">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-2xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-blue-500 to-green-600">
           Our Committee
         </h2>
 
         {/* Website Team Section */}
-        <div className="mb-4  bg-gray-900  rounded-lg">
+        <div className="mb-4 bg-gray-900 rounded-lg">
           <button
             onClick={() => toggleSection('websiteTeam')}
             className="w-full px-3 py-2 flex justify-between items-center text-white"
@@ -109,25 +114,35 @@ const CommitteeSection = () => {
           </button>
 
           {expandedSection === 'websiteTeam' && (
-            <div className="px-3 py-2 bg-gray-900 rounded-b-lg">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {websiteTeam.members.map((member, index) => (
-                  <div key={index} className="p-2 bg-gray-800 rounded">
-                    <h4 className="font-semibold text-blue-300">{member.name}</h4>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-200"
-                    >
-                      <Linkedin className="w-3 h-3 mr-1" />
-                      <span className="text-xs">LinkedIn</span>
-                    </a>
-                  </div>
-                ))}
+  <div className="px-3 py-2 bg-gray-900 rounded-b-lg">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <ul className="space-y-1 text-xs">
+        {websiteTeam.members.map((member, index) => (
+          <li
+            key={index}
+            className="text-gray-300 hover:text-blue-300 transition-colors duration-200"
+          >
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between group space-x-2"
+            >
+              <span className="truncate">{member.name}</span>
+              <div className="flex items-center space-x-1">
+                {/* Chevron Right (Optional, as an indicator for interaction) */}
+                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-300 transition-colors duration-200" />
+                {/* LinkedIn Icon (Visible only on hover) */}
+                <Linkedin className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
               </div>
-            </div>
-          )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
+
         </div>
 
         {/* Other Committees */}
@@ -166,3 +181,4 @@ const CommitteeSection = () => {
 };
 
 export default CommitteeSection;
+
