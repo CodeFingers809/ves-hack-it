@@ -11,7 +11,7 @@ const CommitteeSection = () => {
       { name: "Aadil Shah", linkedin: "https://www.linkedin.com/in/adilns786/" },
       { name: "Ayush Bohra", linkedin: "https://www.linkedin.com/in/ayush-bohra7/" },
       { name: "Parth Takale", linkedin: "https://www.linkedin.com/in/parth-takale-514188264/" },
-      { name: "Sarah Williams", linkedin: "https://linkedin.com/in/sarahwilliams" }
+      { name: "Dhairyash Jain", linkedin: "https://www.linkedin.com/in/dhairyash-jain-9799831a3/" }
     ]
   };
 
