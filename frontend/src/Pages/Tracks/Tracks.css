@@ -30,3 +30,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* Glow effect for titles */
+.glow-effect {
+  text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #d4d4d4;
+}
+
+/* Hover glow effect for problem statements */
+.hover\\:glow-hover:hover {
+  font-weight: bold;
+  text-shadow: 0 0 10px #fff, 0 0 20px #d4d4d4;
+  transition: text-shadow 0.3s ease, font-weight 0.3s ease;
+}
