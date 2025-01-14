@@ -113,7 +113,7 @@ const Tracks = () => {
         <h2
           className="text-7xl font-black workbench-font text-center text-white mb-10"
           style={{
-            textShadow: "-5px 0 12px red, 5px 0 12px yellow",
+            textShadow: "-5px 0 12px green, 5px 0 12px blue",
           }}
         >
           Problem Statements
@@ -123,35 +123,54 @@ const Tracks = () => {
         <div className="mb-12 flex justify-center">
           <div className="bg-sky-900 backdrop-blur-sm rounded-lg shadow-xl shadow-gray-900 border-gray-700 border p-8 max-w-4xl w-full">
             <h3
-              className="text-5xl font-bold text-center text-blue-200 mb-6 glow-effect"
+              className="text-2xl lg:text-5xl font-bold text-center text-blue-200 mb-6 glow-effect"
               style={{
                 textShadow: "0 0 15px blue, 0 0 25px lightblue",
               }}
             >
               Software
             </h3>
-            <ol className="ml-5 text-2xl text-sky-100 font-medium list-decimal">
+            <ol className="ml-5 text-md lg:text-lg text-sky-100 font-medium list-decimal">
               <li className="hover:glow-hover">
-                Develop a platform for real-time sentiment analysis of social
-                media posts.
+                HW-01 : Smart Fall Detection System for the Elderly.
               </li>
               <li className="hover:glow-hover">
-                Create a system to track and visualize carbon footprint
-                reduction strategies.
+                HW-02 : Smart Pill Dispenser for Alzheimer’s and Dementia.
+                Patients
               </li>
               <li className="hover:glow-hover">
-                Design a mobile app for personalized mental health management.
+                HW-03 : Precision Farming System for Enhanced Crop Management.
               </li>
               <li className="hover:glow-hover">
-                Build a cloud-based solution for managing digital classrooms.
+                HW-04 : Automated Animal Species Detection and Monitoring
+                System.
               </li>
               <li className="hover:glow-hover">
-                Implement an AI-driven recommendation engine for
-                energy-efficient appliances.
+                HW-05 : Smart Writing Pen and Pad for Children with Learning
+                Disabilities.
               </li>
               <li className="hover:glow-hover">
-                Develop a secure platform for e-waste management and recycling
-                incentives.
+                HW-06 : Enhanced Ham Radio System for Improved Communication and
+                Accessibility.
+              </li>
+              <li className="hover:glow-hover">
+                HW-07 : Reduction of Air Quality Index (AQI) Through Efficient
+                Tracking, Monitoring, and Implementation of Solutions.
+              </li>
+              <li className="hover:glow-hover">
+                HW-08 : Electric vehicle battery management device.
+              </li>
+              <li className="hover:glow-hover">
+                HW-09 : Railway track crack detection & monitoring.
+              </li>
+              <li className="hover:glow-hover">
+                HW-10 : Maze solving Micro-mouse.
+              </li>
+              <li className="hover:glow-hover">
+                HW-11 : Coin sorting system for temples.
+              </li>
+              <li className="hover:glow-hover">
+                HW-12 : Robotic Inspection System for Hazardous Environments.
               </li>
             </ol>
           </div>
@@ -161,37 +180,28 @@ const Tracks = () => {
         <div className="flex justify-center">
           <div className="bg-orange-800 backdrop-blur-sm rounded-lg shadow-xl shadow-gray-900 border-gray-700 border p-8 max-w-4xl w-full">
             <h3
-              className="text-5xl font-bold text-center text-orange-200 mb-6 glow-effect"
+              className="text-2xl lg:text-5xl font-bold text-center text-orange-200 mb-6 glow-effect"
               style={{
                 textShadow: "0 0 15px orange, 0 0 25px gold",
               }}
             >
               Hardware
             </h3>
-            <ol className="ml-5 text-2xl text-orange-100 font-medium list-decimal">
+            <ol className="ml-5 text-md lg:text-lg text-orange-100 font-medium list-decimal">
               <li className="hover:glow-hover">
-                Prototype a low-cost ventilator for use in remote healthcare
-                facilities.
+                SW-01. Game for Mentally Challenged.
+              </li>
+              <li className="hover:glow-hover">SW-02. Digital Literacy App.</li>
+              <li className="hover:glow-hover">
+                SW-03. Renewable Energy Crowdfunding Platform.
               </li>
               <li className="hover:glow-hover">
-                Design a solar-powered irrigation system with IoT-based
-                monitoring.
+                SW-04. Climate Change Education App.
               </li>
               <li className="hover:glow-hover">
-                Create an automated waste segregation system for urban
-                environments.
+                SW-05. Food Waste Reduction Platform.
               </li>
-              <li className="hover:glow-hover">
-                Develop a wearable device for continuous health monitoring.
-              </li>
-              <li className="hover:glow-hover">
-                Build a smart energy meter for optimizing household energy
-                consumption.
-              </li>
-              <li className="hover:glow-hover">
-                Implement a disaster-resilient communication device for
-                emergencies.
-              </li>
+              <li className="hover:glow-hover">SW-06. Smart Parking App.</li>
             </ol>
           </div>
         </div>
