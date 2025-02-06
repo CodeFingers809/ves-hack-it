@@ -14,6 +14,7 @@ import Sponsors from "./Pages/Sponsor/Sponsor.jsx";
 import ParticleEffect from "./Pages/Tracks/ParticleEffect.jsx";
 import RegistrationBanner from "./Pages/Landing/RegDetail.jsx";
 import CommitteeSection from "./Pages/Teams/Comittee.jsx";
+import RoundOneResults from "./Pages/RoundOneResults.jsx";
 
 function App() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -104,6 +105,7 @@ function App() {
       <RegistrationBanner />
       <Tracks />
       <Timeline />
+      <RoundOneResults/>
       <Sponsors />
       <Prizes />
       <Teams />
